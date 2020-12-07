@@ -1,6 +1,6 @@
 # Machault Occult
 
-This project is current **Under Development**
+This project is currently **Under Development**
 
 ## Available Scripts
 
