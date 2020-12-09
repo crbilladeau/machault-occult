@@ -1,10 +1,12 @@
 import './App.css';
-import Icon from './Icon';
+import Home from './components/Home';
+import Icon from './components/Icon';
 
 function App() {
   return (
     <>
-      <Icon />
+      {/* <Icon /> */}
+      <Home />
     </>
   );
 }
