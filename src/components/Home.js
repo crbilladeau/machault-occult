@@ -74,7 +74,7 @@ const MenuSquare = styled.div`
       cursor: pointer;      
       transform: scale(1.2);
     }
-    &:after {    
+    /* &:after {    
       background: none repeat scroll 0 0 transparent;
       bottom: -5px;
       content: "";
@@ -89,7 +89,7 @@ const MenuSquare = styled.div`
     &:hover:after { 
       width: 100%;
       left: 0; 
-    }
+    } */
   }
 `;
 
