@@ -1,23 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-import dust from '../images/dust-texture-b.jpg';
-import particles from '../images/particles_01.mp4';
+import main from '../images/main.png';
+import legend from '../images/legend-lore.png'
 import eyelogo from '../images/eye-logo.svg';
 
 const Home = () => {
   return (
     <HomeContainer>
-      <MenuSquare></MenuSquare>
-      <MenuSquare>
-        <h1>locate object</h1>
-      </MenuSquare>      
-      <MenuSquare></MenuSquare>
-      <MenuSquare><h1>identify</h1></MenuSquare>
-      <MenuSquare><Logo src={eyelogo} /></MenuSquare>
-      <MenuSquare><h1>teleport</h1></MenuSquare>
-      <MenuSquare></MenuSquare>
-      <MenuSquare><h1>sending</h1></MenuSquare>
-      <MenuSquare></MenuSquare>
+      <MenuContainer>
+        <MenuSquare></MenuSquare>
+        <MenuSquare>
+          <h1>locate object</h1>
+        </MenuSquare>      
+        <MenuSquare></MenuSquare>
+        <MenuSquare><h1>identify</h1></MenuSquare>
+        <MenuSquare><Logo src={eyelogo} /></MenuSquare>
+        <MenuSquare><h1>teleport</h1></MenuSquare>
+        <MenuSquare></MenuSquare>
+        <MenuSquare><h1>sending</h1></MenuSquare>
+        <MenuSquare></MenuSquare>
+      </MenuContainer>
     </HomeContainer>
   )
 }
@@ -28,18 +30,28 @@ export default Home;
 // styles
 
 const HomeContainer = styled.div`
-  background-image: url(${dust});
+  background-image: url(${main});
   background-repeat:no-repeat;
-  background-size:cover;
+  background-size: 100% 100%;
+  background-position: center top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+`;
+
+const MenuContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 2rem;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  margin-right: auto;
-  margin-left: auto;
+  align-items: center;
+  margin: 0 auto; 
+  
+  @media screen and (max-width: 768px) {
+    grid-gap: 0.5rem;
+  }
 `;
 
 
@@ -47,9 +59,8 @@ const HomeContainer = styled.div`
 
 const MenuSquare = styled.div`
   display: grid;
-  align-items: center;
   :nth-child(2) {
-    align-items: end;
+    align-self: end;
   }
   :nth-child(4)  {
     justify-content: end;
@@ -61,7 +72,7 @@ const MenuSquare = styled.div`
     justify-content: start;
   }
   :nth-child(8) {
-    align-items: start;
+    align-self: start;
   }
   h1 {
     color: white;
@@ -94,5 +105,6 @@ const MenuSquare = styled.div`
 `;
 
 const Logo = styled.img`
-  max-width: 400px;
+  width: 100%;
+  height: auto;
 `;

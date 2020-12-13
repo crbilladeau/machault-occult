@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import LazyLinePainter from 'lazy-line-painter'
+import LazyLinePainter from 'lazy-line-painter';
 
 function Icon() {
   useEffect(() => {
