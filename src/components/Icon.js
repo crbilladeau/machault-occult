@@ -1,5 +1,13 @@
 import React, {useEffect} from "react";
 import LazyLinePainter from 'lazy-line-painter';
+import styled from 'styled-components';
+
+const HaviEye = styled.svg`
+  width: 12vw;
+  height: 12vh;
+  position: relative;
+  overflow: visible;
+`;
 
 function Icon() {
   useEffect(() => {
@@ -11,7 +19,7 @@ function Icon() {
   }, [])
 
   return (
-    <svg
+    <HaviEye
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width="400"
@@ -263,7 +271,7 @@ function Icon() {
         strokeWidth="12"
         xlinkHref="#ccSouIQbP"
       ></use>
-    </svg>
+    </HaviEye>
   );
 }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import main from '../images/main.png';
-import legend from '../images/legend-lore.png'
 import eyelogo from '../images/eye-logo.svg';
 
 const Home = () => {
@@ -15,7 +14,7 @@ const Home = () => {
         <MenuSquare></MenuSquare>
         <MenuSquare><h1>identify</h1></MenuSquare>
         <MenuSquare><Logo src={eyelogo} /></MenuSquare>
-        <MenuSquare><h1>teleport</h1></MenuSquare>
+        <MenuSquare><h1>legend lore</h1></MenuSquare>
         <MenuSquare></MenuSquare>
         <MenuSquare><h1>sending</h1></MenuSquare>
         <MenuSquare></MenuSquare>
