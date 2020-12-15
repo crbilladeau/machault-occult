@@ -75,9 +75,10 @@ const MenuSquare = styled.div`
   }
   h1 {
     color: white;
-    font-size: 3.5rem;
-    font-weight: 300;
-    font-family: 'Liu Jian Mao Cao', cursive;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
     text-align: center;
     transition: transform 300ms ease 100ms;
     &:hover {

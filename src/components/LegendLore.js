@@ -4,6 +4,8 @@ import legendlore from '../images/legend-lore.png';
 import prettyodd from '../images/shop-interior.jpg';
 import eye from '../images/eye.png'
 import moon from '../images/moon.png';
+import OccultSection from './Occult';
+import ScryingSection from './Scrying';
 
 const LegendLore = () => {
   return (
@@ -21,6 +23,9 @@ const LegendLore = () => {
             <Oddities src={prettyodd} alt="shop interior" />
           </MiddleRow>
       </HeadlinesBox>
+
+      <OccultSection />
+      <ScryingSection />
     </LegendContainer>
   )
 }
@@ -33,18 +38,18 @@ export default LegendLore;
 const LegendContainer = styled.div`
   background-image: url(${legendlore});
   background-repeat:no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-position: center top;
   position: relative;
-  /* height: 1200px; */
-  /* width: 100vw; */
 `;
 
 const Moon = styled.img`
   width: 1600px;
   margin-top: 12rem;
   margin-left: -14rem;
-
+  position: absolute;
+  top: 0;
+  left: 0;
   @media screen and (max-width: 2000px) {
     width: 1200px;
     margin-top: 20rem;
@@ -57,22 +62,21 @@ const HeadlinesBox = styled.div`
   align-items: flex-end;
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
+  
   h1 {
     font-size: 14rem;
     font-family: 'Playfair Display', serif;
     font-weight: 600;
     color: white;
     margin: 14rem 10rem 0 0;
+    z-index: 1;
   }
 `;
 
 const SpellDescription = styled.p`
   font-size: 1.8rem;
   font-family: 'Playfair Display', serif;
-  font-weight: 200;
+  font-weight: 400;
   font-style: italic;
   text-align: right;
   text-shadow:
@@ -89,6 +93,7 @@ const SpellDescription = styled.p`
   max-width: 900px;
   align-self: flex-end;
   margin: 3rem 12rem 3rem 0;
+  z-index: 2;
 `;
 
 const MiddleRow = styled.div`
@@ -104,6 +109,8 @@ const MoonBox = styled.div`
   justify-content: center;
   align-self: flex-start;
   margin: auto;
+  z-index: 1;
+  position: relative;
   h2 {
       font-size: 8rem;
       font-family: 'Playfair Display', serif;
@@ -124,14 +131,13 @@ const MoonBox = styled.div`
 
 const Eye = styled.img`
   position: absolute;
-  top: 886px;
-  left: 245px;
+  top: 100px;
+  left: -12px;
   width: 130px;
 `;
 
 const Oddities = styled.img`
   width: 550px;
-  background-repeat:no-repeat;
-  background-size:100% auto;
   margin: auto;
+  z-index: 1;
 `;
