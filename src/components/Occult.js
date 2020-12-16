@@ -132,7 +132,7 @@ const Hands = styled.div`
   margin: 8rem auto;
   img {
     width: 480px;
-    margin: 0 4rem;    
+    margin: 0 6rem;    
     :nth-child(1) {
       transform: rotate(90deg);
     }

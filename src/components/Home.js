@@ -1,22 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
+import {Link, animateScroll as scroll} from 'react-scroll';
 import main from '../images/main.png';
 import eyelogo from '../images/eye-logo.svg';
 
 const Home = () => {
+  const [scrollNav, setScrollNav] = useState(false);
+
   return (
-    <HomeContainer>
-      <MenuContainer>
+    <HomeContainer >
+      <MenuContainer scrollNav={scrollNav}>
         <MenuSquare></MenuSquare>
         <MenuSquare>
-          <h1>locate object</h1>
+          <NavLink to="locate-object" smooth={true} duration={500} spy={true} exact='true'>locate object</NavLink>
         </MenuSquare>      
         <MenuSquare></MenuSquare>
-        <MenuSquare><h1>identify</h1></MenuSquare>
+        <MenuSquare><NavLink to="scrying" smooth={true} duration={500} spy={true} exact='true'>scrying</NavLink></MenuSquare>
         <MenuSquare><Logo src={eyelogo} /></MenuSquare>
-        <MenuSquare><h1>legend lore</h1></MenuSquare>
+        <MenuSquare><NavLink to="legend-lore" smooth={true} duration={500} spy={true} exact='true'>legend lore</NavLink></MenuSquare>
         <MenuSquare></MenuSquare>
-        <MenuSquare><h1>sending</h1></MenuSquare>
+        <MenuSquare><NavLink to="sending" smooth={true} duration={500} spy={true} exact='true'>sending</NavLink></MenuSquare>
         <MenuSquare></MenuSquare>
       </MenuContainer>
     </HomeContainer>
@@ -39,7 +42,7 @@ const HomeContainer = styled.div`
   width: 100vw;
 `;
 
-const MenuContainer = styled.div`
+const MenuContainer = styled.nav`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
@@ -73,18 +76,6 @@ const MenuSquare = styled.div`
   :nth-child(8) {
     align-self: start;
   }
-  h1 {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: 400;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    text-align: center;
-    transition: transform 300ms ease 100ms;
-    &:hover {
-      cursor: pointer;      
-      transform: scale(1.2);
-    }
     /* &:after {    
       background: none repeat scroll 0 0 transparent;
       bottom: -5px;
@@ -101,7 +92,19 @@ const MenuSquare = styled.div`
       width: 100%;
       left: 0; 
     } */
-  }
+`;
+
+const NavLink = styled(Link)`
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-align: center;
+  transition: transform 300ms ease 100ms;
+  &:hover {
+    cursor: pointer;      
+    transform: scale(1.2);
 `;
 
 const Logo = styled.img`

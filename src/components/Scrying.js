@@ -10,7 +10,7 @@ const Scrying = () => {
   return (
     <>
       <ScryingHeadline>
-        <h2>scrying</h2>
+        <h2 id="scrying">scrying</h2>
         <img src={capricorn} alt="capricorn constellation" />
         <img src={aquarius} alt="aquarius constellation" />
         <SpellDescription>

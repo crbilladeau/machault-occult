@@ -12,7 +12,7 @@ const LegendLore = () => {
     <LegendContainer>
       <Moon src={moon} alt="moon" />
       <HeadlinesBox>  
-        <h1 id="legendlore">legend lore</h1>
+        <h1 id="legend-lore">legend lore</h1>
         <SpellDescription>the spell brings to your mind a brief summary of the significant lore about the thing you named. The lore might consist of current tales, forgotten stories, or even secret lore that has never been widely known.</SpellDescription>
           <MiddleRow>
             <MoonBox>
