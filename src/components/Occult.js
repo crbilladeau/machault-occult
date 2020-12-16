@@ -108,18 +108,22 @@ const OccultImages = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin: 6rem auto;
+  width: 75%;
   img {
-    width: 10%;
-    margin: 0 6rem;
+    width: 14%;
+    /* margin: 0 6rem; */
     :nth-child(3) {
-      width: 15%;
+      width: 20%;
     }
     :nth-child(4) {
-      width: 9%;
+      width: 13%;
     }
+  }
+  @media screen and (max-width: 1200px) {
+    width: 100%;
   }
 `;
 

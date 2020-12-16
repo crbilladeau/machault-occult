@@ -7,8 +7,12 @@ import eyelogo from '../images/eye-logo.svg';
 const Home = () => {
   const [scrollNav, setScrollNav] = useState(false);
 
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  }
+
   return (
-    <HomeContainer >
+    <HomeContainer>
       <MenuContainer scrollNav={scrollNav}>
         <MenuSquare></MenuSquare>
         <MenuSquare>

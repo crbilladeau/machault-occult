@@ -38,7 +38,7 @@ export default LegendLore;
 const LegendContainer = styled.div`
   background-image: url(${legendlore});
   background-repeat:no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: center top;
   position: relative;
 `;
@@ -50,10 +50,6 @@ const Moon = styled.img`
   position: absolute;
   top: 0;
   left: 0;
-  @media screen and (max-width: 2000px) {
-    width: 1200px;
-    margin-top: 20rem;
-  }
 `;
 
 const HeadlinesBox = styled.div`

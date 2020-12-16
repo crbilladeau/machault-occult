@@ -98,7 +98,7 @@ const About = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  margin: 30rem 20rem 0 4rem;
+  margin: 0 20rem 0 4rem;
   img {
     width: 8%;
     margin: 0 2rem 0 0;
