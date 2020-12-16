@@ -44,7 +44,7 @@ const LegendContainer = styled.div`
 `;
 
 const Moon = styled.img`
-  width: 1600px;
+  width: 67%;
   margin-top: 12rem;
   margin-left: -14rem;
   position: absolute;
@@ -100,7 +100,6 @@ const MiddleRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
 `;
 
 const MoonBox = styled.div`
@@ -133,11 +132,11 @@ const Eye = styled.img`
   position: absolute;
   top: 100px;
   left: -12px;
-  width: 130px;
+  width: 16%;
 `;
 
 const Oddities = styled.img`
-  width: 550px;
+  width: 25%;
   margin: auto;
   z-index: 1;
 `;

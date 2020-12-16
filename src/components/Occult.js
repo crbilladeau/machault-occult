@@ -94,7 +94,7 @@ const SpellDescription = styled.p`
 
 const Dust = styled.img`
   position: absolute;
-  width: 1100px;
+  width: 50%;
   top: 400px;
   margin-top: 20rem;
   z-index: 1;
@@ -112,13 +112,13 @@ const OccultImages = styled.div`
   align-items: center;
   margin: 6rem auto;
   img {
-    width: 260px;
+    width: 10%;
     margin: 0 6rem;
     :nth-child(3) {
-      width: 320px;
+      width: 15%;
     }
     :nth-child(4) {
-      width: 240px;
+      width: 9%;
     }
   }
 `;
@@ -131,7 +131,7 @@ const Hands = styled.div`
   align-items: center;
   margin: 8rem auto;
   img {
-    width: 480px;
+    width: 20%;
     margin: 0 6rem;    
     :nth-child(1) {
       transform: rotate(90deg);
