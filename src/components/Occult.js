@@ -48,28 +48,40 @@ const OccultHeadline = styled.div`
   width: 100%;
   height: 100vh;
   position: relative;
+  @media screen and (max-width: 1200px) {
+    align-items: center;
+    margin-top: -20rem;
+  }
   h2 {
-  font-size: 10rem;
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  color: white;
-  margin-right: 24rem;
-  z-index: 2;
+    font-size: 10rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: white;
+    margin-right: 24rem;
+    z-index: 2;
+    @media screen and (max-width: 1200px) {
+      margin-left: 4rem;
+      margin-right: 0;
+    }
   }
   span {
     font-size: 2rem;
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     color: #FFCA3A;
-    margin-left: 4rem;
-    z-index: 2;
+    margin-left: 3rem;
+    z-index: 2;  
+    @media screen and (max-width: 850px) {
+      font-size: 1.6rem;
+      margin-left: 1rem;
+    }
   }
+
 `;
 
 const SpellDescription = styled.p`
   display: flex;
   flex-direction: column;
-  width: 100%;
   max-width: 1000px;
   margin: 2rem 4rem;
   
@@ -90,6 +102,12 @@ const SpellDescription = styled.p`
   color: white;
   line-height: 2.2rem;
   z-index: 2;
+  @media screen and (max-width: 1200px) {
+    font-size: 1.6rem;
+    text-align: right;
+    margin: 2rem 2rem 0 6rem;
+    max-width: 800px;
+  }
 `;
 
 const Dust = styled.img`
@@ -99,9 +117,9 @@ const Dust = styled.img`
   margin-top: 20rem;
   z-index: 1;
   transform: rotate(-90deg);
-  /* @media screen and (max-width: 1800px) {
-    width: 800px;
-  } */
+  @media screen and (max-width: 1200px) {
+    top: 600px;
+  }
 `;
 
 const OccultImages = styled.div`
@@ -114,7 +132,6 @@ const OccultImages = styled.div`
   width: 75%;
   img {
     width: 14%;
-    /* margin: 0 6rem; */
     :nth-child(3) {
       width: 20%;
     }
@@ -124,6 +141,7 @@ const OccultImages = styled.div`
   }
   @media screen and (max-width: 1200px) {
     width: 100%;
+    margin: 4rem auto;
   }
 `;
 
@@ -134,6 +152,9 @@ const Hands = styled.div`
   justify-content: center;
   align-items: center;
   margin: 8rem auto;
+   @media screen and (max-width: 1200px) {
+      margin: 0 auto;
+  }
   img {
     width: 20%;
     margin: 0 6rem;    
@@ -142,6 +163,7 @@ const Hands = styled.div`
     }
     :nth-child(2) {
       transform: scaleX(-1) rotate(90deg);
-    }  
+    }
+ 
   }
 `;
