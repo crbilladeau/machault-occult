@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import legendlore from '../images/legend-lore.png';
-import prettyodd from '../images/shop-interior.jpg';
+import prettyodd from '../images/prettyodd.png';
 import eye from '../images/eye.png'
 import moon from '../images/moon.png';
 import OccultSection from './Occult';
@@ -10,19 +10,19 @@ import ScryingSection from './Scrying';
 const LegendLore = () => {
   return (
     <LegendContainer>
+    
       <Moon src={moon} alt="moon" />
       <HeadlinesBox>  
         <h1 id="legend-lore">legend lore</h1>
-        <SpellDescription>the spell brings to your mind a brief summary of the significant lore about the thing you named. The lore might consist of current tales, forgotten stories, or even secret lore that has never been widely known.</SpellDescription>
+        <SpellDescription><p>the spell brings to your mind a brief summary of the significant lore about the thing you named, consisting of current tales, forgotten stories, or even secret lore that has never been widely known.</p></SpellDescription>
+          </HeadlinesBox>
           <MiddleRow>
             <MoonBox>
               <h2>Machault<br/>Occult</h2>
-              <Eye src={eye} alt="eye" />   
               <p>is a prestigious collection of rare and extraordinary magical artefacts meticulously curated from around the world.</p>
             </MoonBox>
             <Oddities src={prettyodd} alt="shop interior" />
           </MiddleRow>
-      </HeadlinesBox>
 
       <OccultSection />
       <ScryingSection />
@@ -45,22 +45,24 @@ const LegendContainer = styled.div`
 
 const Moon = styled.img`
   width: 67%;
-  margin-top: 12rem;
   margin-left: -14rem;
   position: absolute;
-  top: 0;
+  top: 500px;
   left: 0;
-  @media screen and (max-width: 1920px) {
-    margin-top: 20rem;
-    margin-left: -10rem;
+  @media screen and (max-width: 1600px) {
+    top: 300px;
+    left: 60px;
   }
   @media screen and (max-width: 1200px) {
-    margin-top: 19rem;
-    margin-left: -8rem;
+    width: 70%;
+    left: 100px;
   }
-  @media screen and (max-width: 850px) {
-    margin-top: 14rem;
-    margin-left: -6rem;
+  @media screen and (max-width: 600px) {
+    width: 85%;
+    top: 700px;
+    left: 248px;
+    transform: rotate(85deg);
+ 
   }
 `;
 
@@ -68,153 +70,132 @@ const HeadlinesBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 100%;
-  height: 100%;
-  
+  margin: 0 1rem 2rem 1rem;
+
   h1 {
-    font-size: 14rem;
+    font-size: 12vw;
     font-family: 'Playfair Display', serif;
     font-weight: 600;
     text-align: right;
     color: white;
-    margin: 14rem 10rem 0 0;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.50), 3px 3px 3px rgba(0,0,0,0.50);
+    margin: 14rem 4rem 0 0;
     z-index: 1;
-    @media screen and (max-width: 1920px) {
-      margin: 14rem 2rem 0 0;
-    }
-    @media screen and (max-width: 1200px) {
-      font-size: 10rem;
-      margin: 10rem 2rem 0 0;
-    }
-    @media screen and (max-width: 850px) {
-      font-size: 8rem;
-      margin: 6rem 1rem 0 0;
+    @media screen and (max-width: 600px) {
+      margin: 16rem 0 0 0;
+      font-size: 20vw;
     }
   }
 `;
 
-const SpellDescription = styled.p`
-  font-size: 1.8rem;
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
-  font-style: italic;
-  text-align: right;
-  text-shadow:
-        0.05em 0 black,
-        0 0.05em black,
-        -0.05em 0 black,
-        0 -0.05em black,
-        -0.05em -0.05em black,
-        -0.05em 0.05em black,
-        0.05em -0.05em black,
-        0.05em 0.05em black;
-  color: white;
-  line-height: 2rem;
-  max-width: 900px;
+const SpellDescription = styled.div`
   align-self: flex-end;
-  margin: 3rem 12rem 3rem 0;
-  z-index: 2;
-  @media screen and (max-width: 1920px) {
-    margin: 2rem 4rem 2rem 0;
-    max-width: 700px;
+  max-width: 48vw;    
+  z-index: 1;
+  @media screen and (max-width: 600px) {
+    max-width: 100%;
+    align-self: flex-start;
   }
-  @media screen and (max-width: 1200px) {
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-    margin: 2rem 2rem 2rem 0;
-    max-width: 500px;
+  p {
+    font-size: 1.8vw;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    text-align: right;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.50), 2px 2px 2px rgba(0,0,0,0.50);
+    color: white;
+    line-height: 2vw;
+    margin: 2vw 4vw 4vw 0;
+
+  @media screen and (max-width: 1024px) {
+    margin: 4vw 4vw;
   }
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 600px) {
     font-size: 1rem;
-    line-height: 1.2rem;
-    margin: 2rem 1rem 2rem 0;
-    max-width: 350px;
+    line-height: 1.4rem;
+    text-align: left;
+    margin: 4rem 2rem;
   }
+  @media screen and (max-width: 420px) {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    text-align: left;
+    margin: 4rem 1rem;
+  }
+}
 `;
 
 const MiddleRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  margin: 0 0 20vw 0;
+  @media screen and (max-width: 1600px) {
+    margin: -4vw 0 20vw 0;
+  }
+  @media screen and (max-width: 1600px) {
+    margin: -6vw 0 20vw 0;
+  }
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 0 10vw 0;
+  }
 `;
 
 const MoonBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-self: flex-start;
-  margin: auto;
+  align-items: center;
   z-index: 1;
   position: relative;
-
+  @media screen and (max-width: 600px) {
+    margin: 40vw 0 6vw 0;
+  }
   h2 {
-      font-size: 8rem;
+      font-size: 8vw;
       font-family: 'Playfair Display', serif;
       font-weight: 600;
       color: white;
-      line-height: 6.5rem;
-      @media screen and (max-width: 1920px) {
-        font-size: 6rem;
-        line-height: 5.5rem;
-      }
-      @media screen and (max-width: 1200px) {
-        font-size: 4rem;
-        line-height: 3.5rem;
-      }
-      @media screen and (max-width: 850px) {
-        font-size: 3rem;
-        line-height: 2.5rem;
-      }
+      text-shadow: 3px 3px 3px rgba(0,0,0,0.50), 3px 3px 3px rgba(0,0,0,0.50);
+      line-height: 6.5vw;
+      align-self: center;
+    @media screen and (max-width: 600px) {
+      font-size: 14vw;
+      line-height: 12.5vw;
+      text-align: center;
     }
+    @media screen and (max-width: 420px) {
+      margin-top: 2rem;
+    }
+  }
   p {
-    font-size: 2.5rem;
+    font-size: 2.2vw;
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     color: white;
-    line-height: 3.5rem;
-    max-width: 800px;
-    margin: 0.5rem 0 0 0;
-    @media screen and (max-width: 1920px) {
-      font-size: 1.8rem;
-      line-height: 2.8rem;
-      max-width: 500px;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.50), 2px 2px 2px rgba(0,0,0,0.50);
+    line-height: 2.4vw;
+    max-width: 40vw;
+    margin: 1rem 0 0 12vw;
+    @media screen and (max-width: 600px) {
+      text-align: center;
+      margin: 10rem 1rem 0 1rem;
+      font-size: 6vw;
+      line-height: 7vw;
+      max-width: 100%;
     }
-    @media screen and (max-width: 1200px) {
-      font-size: 1.4rem;
-      line-height: 1.8rem;
-      max-width: 350px;
-    }
-    @media screen and (max-width: 850px) {
-      font-size: 1rem;
-      line-height: 1.6rem;
-      max-width: 300px;
-    }
-  }
-`;
-
-const Eye = styled.img`
-  position: absolute;
-  top: 109px;
-  left: -3px;
-  width: 14%;
-  @media screen and (max-width: 1920px) {
-    top: 102px;
-    left: 2px;
-    width: 15%;
-  }
-  @media screen and (max-width: 1920px) {
-    top: 62px;
-    left: 0px;
-  }
-  @media screen and (max-width: 850px) {
-    top: 44px;
-    left: 1px;
-    width: 12%;
   }
 `;
 
 const Oddities = styled.img`
-  width: 25%;
-  margin: auto;
+  width: 38%;
   z-index: 1;
+  margin: 0 2rem;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    margin: 4rem 0;
+  }
 `;
