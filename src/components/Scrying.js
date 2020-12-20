@@ -179,6 +179,7 @@ const About = styled.div`
 
 const Portrait = styled.div`
   margin-top: 20rem;
+  
   @media screen and (max-width: 768px) {
     margin-top: 0;
   }

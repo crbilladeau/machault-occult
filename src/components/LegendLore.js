@@ -62,11 +62,10 @@ const Moon = styled.img`
     top: 700px;
     left: 248px;
     transform: rotate(85deg);
- 
   }
 `;
 
-const HeadlinesBox = styled.div`
+export const HeadlinesBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -88,7 +87,7 @@ const HeadlinesBox = styled.div`
   }
 `;
 
-const SpellDescription = styled.div`
+export const SpellDescription = styled.div`
   align-self: flex-end;
   max-width: 48vw;    
   z-index: 1;
