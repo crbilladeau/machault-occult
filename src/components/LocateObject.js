@@ -25,7 +25,7 @@ const LocateObject = () => {
         </Disclaimer>
       </MiddleRow>
   
-      <Teleport />
+      {/* <Teleport /> */}
     </LocateContainer>
   )
 }

@@ -92,7 +92,7 @@ export const HeadlinesBox = styled.div`
     text-align: right;
     color: white;
     text-shadow: 3px 3px 3px rgba(0,0,0,0.50), 3px 3px 3px rgba(0,0,0,0.50);
-    margin: 14rem 4rem 0 0;
+    margin: 16rem 4rem 0 0;
     z-index: 1;
     @media screen and (max-width: 600px) {
       margin: 16rem 0 0 0;
@@ -107,9 +107,12 @@ export const HeadlinesBox = styled.div`
 
 export const SpellDescription = styled.div`
   align-self: flex-end;
-  max-width: 48vw;    
+  max-width: 46vw;    
   z-index: 1;
   margin: 2vw 4vw 6vw 0;
+  @media screen and (max-width: 1200px) {
+    max-width: 40vw;
+  }
   @media screen and (max-width: 600px) {
     max-width: 100%;
     align-self: flex-start;
@@ -127,7 +130,11 @@ export const SpellDescription = styled.div`
     text-shadow: 2px 2px 2px rgba(0,0,0,0.50), 2px 2px 2px rgba(0,0,0,0.50);
     color: white;
     line-height: 2vw;
-
+  @media screen and (max-width: 1200px) {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    text-align: right;
+  }
   @media screen and (max-width: 600px) {
     font-size: 1.2rem;
     line-height: 1.6rem;

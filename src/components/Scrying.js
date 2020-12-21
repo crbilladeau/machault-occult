@@ -108,11 +108,23 @@ const SpellDescription = styled.p`
   color: white;
   line-height: 2vw;
   z-index: 2;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1200px) {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    max-width: 70vw;
+    margin: 2rem;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    max-width: 100%;
+    text-align: left;
+    margin: 4rem 2rem 2rem 2rem;
+  }
+  @media screen and (max-width: 420px) {
     font-size: 1rem;
     line-height: 1.4rem;
-    max-width: 75vw;
-    align-self: flex-start;
+    margin: 4rem 1rem 0 1.5rem;
     text-align: left;
   }
 `;
@@ -122,10 +134,15 @@ const About = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 8rem 6vw 2rem 4vw;
+  margin: 4vw 6vw 2vw 2vw;
+  color: white;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0rem 4vw 2vw 2vw;
+  }
   @media screen and (max-width: 768px) {
-    margin: 2rem auto 6rem auto;
-    max-width: 65vw;
+    margin: 10vw auto 10vw auto;
+    max-width: 75vw;
   }
   @media screen and (max-width: 600px) {
     max-width: 80vw;
@@ -133,24 +150,27 @@ const About = styled.div`
   @media screen and (max-width: 420px) {
     flex-direction: column;
     max-width: 100%;
-    margin: 0rem 1rem 6rem 1rem;
+    margin: 0rem 1rem 4rem 1rem;
   }
   img {
     width: 8%;
     margin: 0 2rem 0 0;
+    @media screen and (max-width: 1024px) {
+      margin: 0 1rem 0 0;
+    }
     @media screen and (max-width: 420px) {
       width: 20%;
-      margin: 0 0 2rem 0;
+      margin: 2rem 0 2rem 0;
     }
   }
   p {
     font-size: 2vw;
+    line-height: 2.4vw;
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-    color: white;
     @media screen and (max-width: 768px) {
-      font-size: 1rem;
-      line-height: 1.4rem;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
       color: white;
     }
     @media screen and (max-width: 420px) {
@@ -162,17 +182,18 @@ const About = styled.div`
 `;
 
 const Portrait = styled.div`
-  margin-top: 20rem;
   z-index: 3;
-  
+  margin: 20rem 2rem 0 2rem;
   @media screen and (max-width: 768px) {
-    margin-top: 0;
+    margin: 0 2rem 2rem 2rem;
+  }
+  @media screen and (max-width: 420px) {
+    margin: 0 1rem 2rem 1rem;
   }
   img {
     width: 90%;  
     @media screen and (max-width: 768px) {
       width: 100%;
-      margin: 0 auto;
     }
   }
 `;

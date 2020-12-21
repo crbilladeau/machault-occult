@@ -18,7 +18,7 @@ const Occult = () => {
           <br />
           3. secret; disclosed or communicated only to the initiated.
         </SpellDescription>      
-        {/* <Dust src={dust} alt="sparkles" /> */}
+        <Dust src={dust} alt="sparkles" />
       </OccultHeadline>
       <OccultImages>
         <img src={cup} alt='goblet' />
@@ -111,15 +111,15 @@ const SpellDescription = styled.p`
     max-width: 800px;
   }
   @media screen and (max-width: 600px) {
-      font-size: 1rem;
-      line-height: 1.4rem;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
       margin: 2rem 3rem 0 3rem;
       text-align: left;
     }
   @media screen and (max-width: 420px) {
-    font-size: 0.9rem;
-    line-height: 1.5rem;
-    margin: 2rem 2rem 0 2rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin: 2rem 1rem 0 2rem;
     text-align: left;
   }
 `;
@@ -132,15 +132,15 @@ const Dust = styled.img`
   z-index: 1;
   transform: rotate(-90deg);
   @media screen and (max-width: 850px) {
-    width: 100%;
+    /* width: 80vw; */
     top: 60px;
   }
   @media screen and (max-width: 420px) {
-    width: 100%;
+
     top: 800px;
   }
   @media screen and (max-width: 382px) {
-    width: 100%;
+
     top: 1000px;
     
   }
@@ -160,6 +160,9 @@ const OccultImages = styled.div`
     margin: 1rem;
     :nth-child(3) {
       width: 300px;
+    @media screen and (max-width: 320px) {
+      width: 260px;
+    }
     }
     :nth-child(4) {
       width: 180px;
@@ -196,6 +199,9 @@ const Hands = styled.div`
     }
     @media screen and (max-width: 420px) {
       width: 260px;
+    }
+    @media screen and (max-width: 320px) {
+      width: 240px;
     }
   }
 `;
