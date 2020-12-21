@@ -41,7 +41,7 @@ const LegendContainer = styled.div`
   background-repeat:no-repeat;
   background-size: cover;
   background-position: center top;
-  /* position: relative; */
+  position: relative;
   /* overflow-x: hidden; */
 `;
 
