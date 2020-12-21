@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import locateobject from '../images/locate-object.png';
 import hourglass from '../images/hourglass.jpg';
 import cosmos from '../images/cosmos.png';
-import {HeadlinesBox} from './LegendLore';
 import Teleport from './Teleport';
 
 const LocateObject = () => {
@@ -11,7 +10,7 @@ const LocateObject = () => {
     <LocateContainer>
       <Cosmos id="locate-object" src={cosmos} alt="cosmos" />
       <HeadlinesBox>
-        <h1 >locate object</h1>
+        <h1>locate object</h1>
         <SpellDescription>
           <p>locate the nearest object of a particular kind, such as a certain kind of apparel, jewelry, furniture, tool, or weapon.</p>
         </SpellDescription>
@@ -22,9 +21,10 @@ const LocateObject = () => {
         </ImageBox>
         <Disclaimer>
           <p>Our selection of mythical objects, alchemical liquids, and magical and non-magical tomes is unlike any other in the world.**</p>
-          <p>** Machault Occult and its owner(s) are not responsible or liable for any injuries, lost limbs or appendages, additional clones, demons summoned, confessions of love, unwanted body swaps, accidental & painful deaths - irreversible or otherwise - sustained before or after purchase from our inventory. NO RETURNS - ALL SALES ARE FINAL!</p></Disclaimer>
+          <p>** Machault Occult and its owner(s) are not responsible or liable for any injuries, lost limbs or appendages, additional clones, demons summoned, confessions of love, unwanted body swaps, accidental & painful deaths - irreversible or otherwise - sustained before or after purchase from our inventory. NO RETURNS - ALL SALES ARE FINAL!</p>
+        </Disclaimer>
       </MiddleRow>
-
+  
       <Teleport />
     </LocateContainer>
   )
@@ -38,14 +38,36 @@ const LocateContainer = styled.div`
   background-size: cover;
   background-position: center top;
   position: relative;
-  width: 100vw;
-  margin-top: 40rem;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  @media screen and (max-width: 1200px) {
+ 
+  }
+  /* @media screen and (max-width: 768px) {
+    margin-top: 60rem;
+  } */
+`;
 
+const HeadlinesBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 10rem;
+  /* margin: 0 1rem 2rem 1rem; */
+  
   h1 {
+    font-size: 12vw;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    text-align: right;
     color: black;
-    text-shadow: none;
+    margin: 14rem 4rem 0 0;
+    z-index: 1;
+    @media screen and (max-width: 600px) {
+      margin: 16rem 0 0 0;
+      font-size: 20vw;
+    }
   }
 `;
 
@@ -53,8 +75,8 @@ const Cosmos = styled.img`
   width: 60%;
   margin-left: -14rem;
   position: absolute;
-  top: 100px;
-  left: 200px;
+  top: 400px;
+  left: 250px;
   transform: rotate(180deg) scaleX(-1);
 
   @media screen and (max-width: 1600px) {
@@ -116,8 +138,11 @@ const MiddleRow = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  margin-top: 10rem;
+  margin-top: 20rem;
   z-index: 1;
+  @media screen and (max-width: 1024px) {
+    margin-top: 0%;
+  }
   
   p {
     color: white;
@@ -127,7 +152,6 @@ const MiddleRow = styled.div`
     text-align: right;
     text-shadow: 2px 2px 2px rgba(0,0,0,0.50), 2px 2px 2px rgba(0,0,0,0.50);
     line-height: 2.4vw;
-    margin: 0 2rem;
     max-width: 60vw;
     margin: 0 6rem;
 
@@ -145,11 +169,11 @@ const ImageBox = styled.div`
   width: 100%;
   img {
     width: 80%;
-    margin: 2rem 4rem;
+    margin: 0 4rem 10rem 4rem;
   }
 `;
 
-const Disclaimer = styled.div`
+export const Disclaimer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -167,5 +191,10 @@ const Disclaimer = styled.div`
     max-width: 30vw;
     margin-top: 8rem;
     text-align: left;
+    @media screen and (max-width: 1024px) {
+      max-width: 100%;
+      margin: 4rem 1rem;
+    }
   }
 `;
+

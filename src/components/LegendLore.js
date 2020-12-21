@@ -18,6 +18,7 @@ const LegendLore = () => {
           </HeadlinesBox>
           <MiddleRow>
             <MoonBox>
+              <MoonSmall src={moon} alt="moon" />
               <h2>Machault<br/>Occult</h2>
               <p>is a prestigious collection of rare and extraordinary magical artefacts meticulously curated from around the world.</p>
             </MoonBox>
@@ -40,7 +41,8 @@ const LegendContainer = styled.div`
   background-repeat:no-repeat;
   background-size: cover;
   background-position: center top;
-  position: relative;
+  /* position: relative; */
+  /* overflow-x: hidden; */
 `;
 
 const Moon = styled.img`
@@ -58,10 +60,16 @@ const Moon = styled.img`
     left: 100px;
   }
   @media screen and (max-width: 600px) {
-    width: 85%;
-    top: 700px;
-    left: 248px;
+    display: none;
+  }
+`;
+
+const MoonSmall = styled.img`
+  display: none;
+  @media screen and (max-width: 600px) {
+    display: block;
     transform: rotate(85deg);
+    width: 100%;
   }
 `;
 
@@ -70,7 +78,9 @@ export const HeadlinesBox = styled.div`
   flex-direction: column;
   align-items: flex-end;
   margin: 0 1rem 2rem 1rem;
-
+  @media screen and (max-width: 600px) {
+    margin: 1rem;
+  }
   h1 {
     font-size: 12vw;
     font-family: 'Playfair Display', serif;
@@ -84,6 +94,10 @@ export const HeadlinesBox = styled.div`
       margin: 16rem 0 0 0;
       font-size: 20vw;
     }
+    @media screen and (max-width: 420px) {
+      margin: 16rem 0 0 0;
+      font-size: 24vw;
+    }
   }
 `;
 
@@ -91,9 +105,11 @@ export const SpellDescription = styled.div`
   align-self: flex-end;
   max-width: 48vw;    
   z-index: 1;
+  margin: 2vw 4vw 6vw 0;
   @media screen and (max-width: 600px) {
     max-width: 100%;
     align-self: flex-start;
+    margin: 6rem 0 0 0;
   }
   p {
     font-size: 1.8vw;
@@ -104,22 +120,18 @@ export const SpellDescription = styled.div`
     text-shadow: 2px 2px 2px rgba(0,0,0,0.50), 2px 2px 2px rgba(0,0,0,0.50);
     color: white;
     line-height: 2vw;
-    margin: 2vw 4vw 4vw 0;
 
-  @media screen and (max-width: 1024px) {
-    margin: 4vw 4vw;
-  }
   @media screen and (max-width: 600px) {
-    font-size: 1rem;
-    line-height: 1.4rem;
-    text-align: left;
-    margin: 4rem 2rem;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    text-align: center;
+    
   }
   @media screen and (max-width: 420px) {
-    font-size: 1rem;
-    line-height: 1.4rem;
-    text-align: left;
-    margin: 4rem 1rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+
+
   }
 }
 `;
@@ -150,8 +162,11 @@ const MoonBox = styled.div`
   align-items: center;
   z-index: 1;
   position: relative;
+  max-width: 50vw;
+
   @media screen and (max-width: 600px) {
-    margin: 40vw 0 6vw 0;
+    margin: 20vw 1.5rem 0 1.5rem;
+    max-width: 100%;
   }
   h2 {
       font-size: 8vw;
@@ -160,14 +175,20 @@ const MoonBox = styled.div`
       color: white;
       text-shadow: 3px 3px 3px rgba(0,0,0,0.50), 3px 3px 3px rgba(0,0,0,0.50);
       line-height: 6.5vw;
-      align-self: center;
+    
     @media screen and (max-width: 600px) {
       font-size: 14vw;
       line-height: 12.5vw;
       text-align: center;
+
+      position: absolute;
+      top: 220px;
     }
     @media screen and (max-width: 420px) {
-      margin-top: 2rem;
+      top: 160px;
+    }
+    @media screen and (max-width: 420px) {
+      top: 130px;
     }
   }
   p {
@@ -177,11 +198,10 @@ const MoonBox = styled.div`
     color: white;
     text-shadow: 2px 2px 2px rgba(0,0,0,0.50), 2px 2px 2px rgba(0,0,0,0.50);
     line-height: 2.4vw;
-    max-width: 40vw;
-    margin: 1rem 0 0 12vw;
+    margin: 1rem 0 0 10vw;
     @media screen and (max-width: 600px) {
       text-align: center;
-      margin: 10rem 1rem 0 1rem;
+      margin: 4rem 0.5rem;
       font-size: 6vw;
       line-height: 7vw;
       max-width: 100%;
@@ -195,6 +215,5 @@ const Oddities = styled.img`
   margin: 0 2rem;
   @media screen and (max-width: 600px) {
     width: 100%;
-    margin: 4rem 0;
   }
 `;

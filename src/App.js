@@ -3,6 +3,7 @@ import Home from './components/Home';
 // import Icon from './components/Icon';
 import LegendLore from './components/LegendLore';
 import LocateObject from './components/LocateObject';
+import Sending from './components/Sending';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Home />
       <LegendLore />
       <LocateObject />
+      <Sending />
     </>
   );
 }

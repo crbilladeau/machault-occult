@@ -127,23 +127,3 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-/* -webkit-animation: scale 2.8s ease-in infinite;
-  -moz-animation: scale 2.8s ease-in infinite;
-  animation: scale 2.8s ease-in infinite;
-}
-@-moz-keyframes scale {
-  100% {
-    -moz-transform: scale(1.2);
-  }
-}
-@-webkit-keyframes scale {
-  100% {
-    -webkit-transform: scale(1.2);
-  }
-}
-@keyframes scale {
-  100% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-  } */

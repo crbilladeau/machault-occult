@@ -4,8 +4,6 @@ import capricorn from '../images/Capricornus.png';
 import aquarius from '../images/Aquarius.png';
 import portrait from '../images/portrait.png';
 import crystal from '../images/crystal.png';
-import crystal2 from '../images/crystal2.png';
-
 const Scrying = () => {
   return (
     <ScryingContainer>        
@@ -19,9 +17,8 @@ const Scrying = () => {
         </SpellDescription>
         <About>
           <img src={crystal} alt="crystal" />
-          <img src={crystal2} alt="crystal" />
           <p>
-            Havier Miniti is one of the world’s most infamous wizards. He has co-owned and operated Machault Occult with his dead husband, Tanum Machault, for the last several decades. Do not ask him how old he is.
+            Havier Miniti is one of the world’s most venerable wizards. He has co-owned and operated Machault Occult with his late husband, Tanum Machault, for the last several decades. Do not ask him how old he is.
           </p>       
         </About>
       </ScryingHeadline>
@@ -38,8 +35,6 @@ const ScryingContainer = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  width: 100vw;
-  height: 100vh;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     
@@ -50,7 +45,7 @@ const ScryingHeadline = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex: 2;
   margin-top: 20rem;
   @media screen and (max-width: 768px) {
@@ -102,7 +97,7 @@ const Constellation = styled.img`
 
 const SpellDescription = styled.p`
   align-self: flex-end;
-  margin: 3rem 2rem;
+  margin: 4rem 2rem;
   max-width: 30vw;
   font-size: 1.8vw;
   font-family: 'Playfair Display', serif;
@@ -127,7 +122,7 @@ const About = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 14rem 6vw 2rem 4vw;
+  margin: 8rem 6vw 2rem 4vw;
   @media screen and (max-width: 768px) {
     margin: 2rem auto 6rem auto;
     max-width: 65vw;
@@ -142,28 +137,17 @@ const About = styled.div`
   }
   img {
     width: 8%;
-    margin: 0 0 0 0;
-    :nth-child(1) {
-      @media screen and (max-width: 768px) {
-        display: none;
-      }
-    }
-    :nth-child(2) {
-      @media screen and (max-width: 768px) {
-        display: block;
-        margin-right: 2rem;
-      }
-      @media screen and (max-width: 420px) {
-        width: 20%;
-        margin: 0 0 2rem 0;
-      }
+    margin: 0 2rem 0 0;
+    @media screen and (max-width: 420px) {
+      width: 20%;
+      margin: 0 0 2rem 0;
     }
   }
   p {
     font-size: 2vw;
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-    color: black;
+    color: white;
     @media screen and (max-width: 768px) {
       font-size: 1rem;
       line-height: 1.4rem;
@@ -179,6 +163,7 @@ const About = styled.div`
 
 const Portrait = styled.div`
   margin-top: 20rem;
+  z-index: 3;
   
   @media screen and (max-width: 768px) {
     margin-top: 0;

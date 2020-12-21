@@ -23,7 +23,7 @@ const Home = () => {
         <MenuSquare><Logo src={eyelogo} /></MenuSquare>
         <MenuSquare><NavLink to="legend-lore" smooth={true} duration={500} spy={true} exact='true'>legend lore</NavLink></MenuSquare>
         <MenuSquare></MenuSquare>
-        <MenuSquare><NavLink to="sending" smooth={true} duration={500} spy={true} exact='true'>sending</NavLink></MenuSquare>
+        <MenuSquare><NavLink to="teleport" smooth={true} duration={500} spy={true} exact='true'>teleport</NavLink></MenuSquare>
         <MenuSquare></MenuSquare>
       </MenuContainer>
     </HomeContainer>
