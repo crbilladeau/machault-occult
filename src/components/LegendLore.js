@@ -19,6 +19,7 @@ const LegendLore = () => {
           <MiddleRow>
             <MoonBox>
               <MoonSmall src={moon} alt="moon" />
+              <Eye src={eye} alt="eye" />
               <h2>Machault<br/>Occult</h2>
               <p>is a prestigious collection of rare and extraordinary magical artefacts meticulously curated from around the world.</p>
             </MoonBox>
@@ -81,6 +82,9 @@ export const HeadlinesBox = styled.div`
   @media screen and (max-width: 600px) {
     margin: 1rem;
   }
+  @media screen and (max-width: 320px) {
+    margin: 0.5rem;
+  }
   h1 {
     font-size: 12vw;
     font-family: 'Playfair Display', serif;
@@ -109,7 +113,10 @@ export const SpellDescription = styled.div`
   @media screen and (max-width: 600px) {
     max-width: 100%;
     align-self: flex-start;
-    margin: 6rem 0 0 0;
+    margin: 6rem 1rem 0 1rem;
+  }
+  @media screen and (max-width: 420px) {
+    margin: 4rem 0.5rem 0 0.5rem;
   }
   p {
     font-size: 1.8vw;
@@ -122,17 +129,15 @@ export const SpellDescription = styled.div`
     line-height: 2vw;
 
   @media screen and (max-width: 600px) {
-    font-size: 1.8rem;
-    line-height: 2rem;
-    text-align: center;
-    
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    text-align: left;
   }
   @media screen and (max-width: 420px) {
-    font-size: 1.4rem;
-    line-height: 1.6rem;
-
-
+    font-size: 1rem;
+    line-height: 1.4rem;
   }
+
 }
 `;
 
@@ -187,8 +192,8 @@ const MoonBox = styled.div`
     @media screen and (max-width: 420px) {
       top: 160px;
     }
-    @media screen and (max-width: 420px) {
-      top: 130px;
+    @media screen and (max-width: 320px) {
+      top: 120px;
     }
   }
   p {
@@ -209,10 +214,21 @@ const MoonBox = styled.div`
   }
 `;
 
+const Eye = styled.img`
+  position: absolute;
+  top: 6.5vw;
+  left: 7.45vw;
+  width: 15%;
+  z-index: 2;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+`;
+
 const Oddities = styled.img`
   width: 38%;
   z-index: 1;
-  margin: 0 2rem;
+  margin: 0 auto;
   @media screen and (max-width: 600px) {
     width: 100%;
   }
