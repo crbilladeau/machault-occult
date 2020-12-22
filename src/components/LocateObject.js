@@ -88,7 +88,7 @@ const SpellDescription = styled.div`
   align-self: flex-end;
   max-width: 48vw;    
   z-index: 1;
-  margin: 2rem 4rem;
+  margin: 3rem 4rem;
   @media screen and (max-width: 768px) {
     margin: 2rem 2rem 0 4rem;
     align-self: flex-start;

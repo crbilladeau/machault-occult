@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <HomeContainer>
-      <MenuContainer scrollNav={scrollNav}>
+      {/* <MenuContainer scrollNav={scrollNav}>
         <MenuSquare></MenuSquare>
         <MenuSquare>
           <NavLink to="locate-object" smooth={true} duration={500} spy={true} exact='true'>locate object</NavLink>
@@ -25,7 +25,7 @@ const Home = () => {
         <MenuSquare></MenuSquare>
         <MenuSquare><NavLink to="teleport" smooth={true} duration={500} spy={true} exact='true'>teleport</NavLink></MenuSquare>
         <MenuSquare></MenuSquare>
-      </MenuContainer>
+      </MenuContainer> */}
     </HomeContainer>
   )
 }

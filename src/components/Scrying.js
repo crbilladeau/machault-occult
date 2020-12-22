@@ -97,7 +97,7 @@ const Constellation = styled.img`
 
 const SpellDescription = styled.p`
   align-self: flex-end;
-  margin: 4rem 2rem;
+  margin: 3rem 2rem;
   max-width: 30vw;
   font-size: 1.8vw;
   font-family: 'Playfair Display', serif;
@@ -134,7 +134,7 @@ const About = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 4vw 4vw 2vw 2vw;
+  margin: 4vw 0 2vw 2vw;
   color: white;
 
   @media screen and (max-width: 1024px) {
@@ -153,7 +153,7 @@ const About = styled.div`
     margin: 0rem 1rem 4rem 1rem;
   }
   img {
-    width: 8%;
+    width: 16%;
     margin: 0 2rem 0 0;
     @media screen and (max-width: 1024px) {
       margin: 0 1rem 0 0;

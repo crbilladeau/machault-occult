@@ -119,7 +119,7 @@ export const SpellDescription = styled.div`
   align-self: flex-end;
   max-width: 46vw;    
   z-index: 1;
-  margin: 2vw 0 6vw 0;
+  margin: 3rem 0 6vw 0;
   @media screen and (max-width: 1200px) {
     max-width: 40vw;
   }

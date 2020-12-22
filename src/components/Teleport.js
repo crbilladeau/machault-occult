@@ -18,7 +18,7 @@ const Teleport = () => {
         <img src={astroimage} alt="blue door with astrology circle" />         
         <Disclaimer>
         <p>The true location of our shop changes each day. Only skilled magic users capable of advanced divination can ascertain our daily location. For the uniniated, our Google Maps coordinates are available on our Facebook page.**</p>
-        <p>** Machault Occult and its owner(s) are not responsible or liable for accidental banishments to other planes of existence as a result of unlawful entry onto the premises or entering outside of business hours, nor for any items “lost” or left behind on the property. Machault Occult reserves the right to banish any customers at the owner’s discretion. We will not update our Facebook page or post consistent business hours - stop asking, or we will delete it.</p>
+        <p>** Machault Occult and its owner(s) are not responsible or liable for accidental banishments to other planes of existence as a result of unlawful entry onto the premises or entering outside of business hours, nor for any items “lost” or left behind on the property. Machault Occult reserves the right to banish any customers at the owner’s discretion. For Mr. Miniti's safety, children are not allowed on the premises at any time. We will not update our Facebook page or post consistent business hours - stop asking, or we will delete it.</p>
         </Disclaimer>
       </MiddleRow>
     </TeleportHeadline>
