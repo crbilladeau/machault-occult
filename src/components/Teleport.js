@@ -133,7 +133,7 @@ const Disclaimer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin: 10rem 4rem 0 4rem;
+  margin: 8rem 4rem 0 4rem;
   width: 100%;
   height: 100%;
   @media screen and (max-width: 1024px) {

@@ -52,8 +52,8 @@ const HeadlinesBox = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 2;
-  @media screen and (max-width: 768px) {
-    /* margin-top: 10rem; */
+  @media screen and (max-width: 420px) {
+    margin: 0;
   }
   h1 {
     font-size: 12vw;
@@ -95,7 +95,7 @@ const SpellDescription = styled.div`
     max-width: 75vw;
   }
   @media screen and (max-width: 700px) {
-    margin: 2rem 2rem 0 2rem;
+    margin: 1rem 1rem 0 1rem;
   }
   
   p {
@@ -218,8 +218,8 @@ const Disclaimer = styled.div`
       max-width: 100%;
       margin: 1rem 2rem;
     }
-    @media screen and (max-width: 320px) {
-      margin: 0 1rem;
+    @media screen and (max-width: 420px) {
+      margin: 1rem;
     }
   }
 `;

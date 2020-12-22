@@ -9,7 +9,7 @@ const Sending = () => {
   return (
     <SendingContainer>
       <HeadlinesBox>
-      <Eye src={goldeye} alt="gold eye" />
+      <Eye src={goldeye} alt="gold eye"  id="sending"/>
         <h1>sending</h1>
         <SpellDescription>
           <p>send a short message of twenty-five words or less to a creature with which you are familiar. the creature hears the message in its mind, recognizes you as the sender if it knows you, and can answer in a like manner immediately.</p>
@@ -50,6 +50,9 @@ const SendingContainer = styled.div`
   @media screen and (max-width: 768px) {
     margin-top: 4rem;
   }
+  @media screen and (max-width: 420px) {
+    margin-top: 20rem;
+  }
   
   h1 {
     font-size: 12vw;
@@ -62,7 +65,11 @@ const SendingContainer = styled.div`
 
     @media screen and (max-width: 768px) {
       font-size: 20vw;
-      margin-top: 12rem;
+      margin-top: 8rem;
+    }
+    @media screen and (max-width: 420px) {
+      align-self: center;
+      margin-right: 0;
     }
   }
 `;
@@ -93,11 +100,13 @@ const SpellDescription = styled.div`
     margin: 2rem 0;
     text-align: left;
   }
+  @media screen and (max-width: 600px) {
+    margin: 2rem;
+  }
   @media screen and (max-width: 420px) {
     font-size: 1rem;
     line-height: 1.4rem;
-    /* text-align: center; */
-    margin: 4rem 1rem;
+    margin: 2rem 1rem;
   }
 }
 `;
@@ -109,6 +118,9 @@ const MiddleRow = styled.div`
   align-items: center;
   @media screen and (max-width: 768px) {
     flex-direction: column;
+  }
+  @media screen and (max-width: 420px) {
+    height: 100vh;
   }
   `;
 
@@ -136,8 +148,13 @@ const Disclaimer = styled.div`
       font-size: 1.4rem;
       line-height: 1.8rem;
       text-align: center;
-      margin: 2rem;
+      margin: 0 2rem;
       max-width: 100%;
+    }
+    @media screen and (max-width: 420px) {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      margin: 2rem;
     }
   }
   p:nth-child(2) {
@@ -152,10 +169,12 @@ const Disclaimer = styled.div`
     margin: 2rem 2rem;
   }
   @media screen and (max-width: 768px) {
-    margin: 2rem;
+    margin: 0 2rem 2rem 2rem;
   }
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 420px) {
+    color: black;
     margin: 1rem;
+    text-align: left;
   }
 }
 `;
@@ -166,6 +185,17 @@ const Eye = styled.img`
   position: absolute;
   top: -30px;
   left: 0;
+  @media screen and (max-width: 768px) {
+    top: -80px;
+  }
+  @media screen and (max-width: 600px) {
+    top: -20px;
+  }
+  @media screen and (max-width: 420px) {
+    width: 100%;
+    top: -300px;
+
+  }
 `;
 
 const Hermit = styled.img`
@@ -174,5 +204,8 @@ const Hermit = styled.img`
   @media screen and (max-width: 768px) {
     margin: 2rem 0;
     width: 30%;
+  }
+  @media screen and (max-width: 420px) {
+    width: 80%;
   }
 `;
