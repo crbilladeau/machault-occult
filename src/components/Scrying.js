@@ -61,7 +61,7 @@ const ScryingHeadline = styled.div`
     font-family: 'Playfair Display', serif;
     font-weight: 600;
     color: white;
-    margin-left: 9vw;
+    margin-left: 4rem;
     align-self: flex-start;
     text-shadow: 3px 3px 3px rgba(0,0,0,0.50), 3px 3px 3px rgba(0,0,0,0.50);
     z-index: 2;
@@ -134,7 +134,7 @@ const About = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 4vw 6vw 2vw 2vw;
+  margin: 4vw 4vw 2vw 2vw;
   color: white;
 
   @media screen and (max-width: 1024px) {
@@ -182,6 +182,9 @@ const About = styled.div`
 `;
 
 const Portrait = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 3;
   margin: 20rem 2rem 0 2rem;
   @media screen and (max-width: 768px) {

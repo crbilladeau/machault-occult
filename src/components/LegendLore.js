@@ -60,6 +60,9 @@ const Moon = styled.img`
     width: 70%;
     left: 100px;
   }
+  @media screen and (max-width: 768px) {
+    top: 600px;
+  }
   @media screen and (max-width: 600px) {
     display: none;
   }
@@ -78,12 +81,15 @@ export const HeadlinesBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin: 0 1rem 2rem 1rem;
+  margin: 0 4rem 2rem 4rem;
+  @media screen and (max-width: 768px) {
+    margin: 0 2rem 2rem 2rem;
+  }
   @media screen and (max-width: 600px) {
-    margin: 1rem;
+    margin: 0;
   }
   @media screen and (max-width: 320px) {
-    margin: 0.5rem;
+    margin: 0;
   }
   h1 {
     font-size: 12vw;
@@ -92,14 +98,18 @@ export const HeadlinesBox = styled.div`
     text-align: right;
     color: white;
     text-shadow: 3px 3px 3px rgba(0,0,0,0.50), 3px 3px 3px rgba(0,0,0,0.50);
-    margin: 16rem 4rem 0 0;
+    margin: 16rem 0 0 0;
     z-index: 1;
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 768px) {
+      font-size: 20vw;
       margin: 16rem 0 0 0;
+    }
+    @media screen and (max-width: 600px) {
+      margin: 16rem 2rem 0 0;
       font-size: 20vw;
     }
     @media screen and (max-width: 420px) {
-      margin: 16rem 0 0 0;
+      margin: 16rem 2rem 0 0;
       font-size: 24vw;
     }
   }
@@ -109,9 +119,12 @@ export const SpellDescription = styled.div`
   align-self: flex-end;
   max-width: 46vw;    
   z-index: 1;
-  margin: 2vw 4vw 6vw 0;
+  margin: 2vw 0 6vw 0;
   @media screen and (max-width: 1200px) {
     max-width: 40vw;
+  }
+  @media screen and (max-width: 768px) {
+    max-width: 50vw;
   }
   @media screen and (max-width: 600px) {
     max-width: 100%;
@@ -119,7 +132,7 @@ export const SpellDescription = styled.div`
     margin: 6rem 1rem 0 1rem;
   }
   @media screen and (max-width: 420px) {
-    margin: 4rem 0.5rem 0 0.5rem;
+    margin: 4rem 1rem 0 1rem;
   }
   p {
     font-size: 1.8vw;
@@ -133,6 +146,11 @@ export const SpellDescription = styled.div`
   @media screen and (max-width: 1200px) {
     font-size: 1.2rem;
     line-height: 1.6rem;
+    text-align: right;
+  }
+  @media screen and (max-width: 850px) {
+    font-size: 1rem;
+    line-height: 1.4rem;
     text-align: right;
   }
   @media screen and (max-width: 600px) {
@@ -175,7 +193,18 @@ const MoonBox = styled.div`
   z-index: 1;
   position: relative;
   max-width: 50vw;
-
+  @media screen and (max-width: 1200px) {
+    margin: 0 0 0 2rem;
+  }
+  @media screen and (max-width: 1024px) {
+    margin: 0 0 4rem 2rem;
+  }
+  @media screen and (max-width: 850px) {
+    margin: 0 0 4rem 0;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 4rem 0 0 0;
+  }
   @media screen and (max-width: 600px) {
     margin: 20vw 1.5rem 0 1.5rem;
     max-width: 100%;
@@ -187,7 +216,6 @@ const MoonBox = styled.div`
       color: white;
       text-shadow: 3px 3px 3px rgba(0,0,0,0.50), 3px 3px 3px rgba(0,0,0,0.50);
       line-height: 6.5vw;
-    
     @media screen and (max-width: 600px) {
       font-size: 14vw;
       line-height: 12.5vw;
@@ -210,13 +238,21 @@ const MoonBox = styled.div`
     color: white;
     text-shadow: 2px 2px 2px rgba(0,0,0,0.50), 2px 2px 2px rgba(0,0,0,0.50);
     line-height: 2.4vw;
-    margin: 1rem 0 0 10vw;
+    margin: 1rem 0 4vw 12vw;
+    @media screen and (max-width: 1200px) {
+      margin: 1rem 0 8vw 12vw;
+    }
+
     @media screen and (max-width: 600px) {
       text-align: center;
       margin: 4rem 0.5rem;
-      font-size: 6vw;
-      line-height: 7vw;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
       max-width: 100%;
+    }
+    @media screen and (max-width: 420px) {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
     }
   }
 `;
@@ -227,6 +263,7 @@ const Eye = styled.img`
   left: 7.45vw;
   width: 15%;
   z-index: 2;
+
   @media screen and (max-width: 600px) {
     display: none;
   }

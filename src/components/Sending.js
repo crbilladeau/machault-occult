@@ -26,10 +26,12 @@ const SendingContainer = styled.div`
   background-position: center top;
   position: relative;
   margin-top: 20rem;
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
-
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
+  
   h1 {
     align-self: center;
     margin-top: 20rem;

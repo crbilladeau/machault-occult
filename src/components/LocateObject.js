@@ -25,7 +25,7 @@ const LocateObject = () => {
         </Disclaimer>
       </MiddleRow>
   
-      {/* <Teleport /> */}
+      <Teleport />
     </LocateContainer>
   )
 }
@@ -41,33 +41,34 @@ const LocateContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  @media screen and (max-width: 1200px) {
- 
+  @media screen and (max-width: 768px) {
+    margin-top: -10rem;
+    justify-content: center;
+    align-items: center;
   }
-  /* @media screen and (max-width: 768px) {
-    margin-top: 60rem;
-  } */
 `;
 
 const HeadlinesBox = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  margin-top: 10rem;
-  /* margin: 0 1rem 2rem 1rem; */
-  
+  z-index: 2;
+  @media screen and (max-width: 768px) {
+    /* margin-top: 10rem; */
+  }
   h1 {
     font-size: 12vw;
     font-family: 'Playfair Display', serif;
     font-weight: 600;
     text-align: right;
     color: black;
-    margin: 14rem 4rem 0 0;
+    margin: 8rem 4rem 0 0;
     z-index: 1;
-    @media screen and (max-width: 600px) {
-      margin: 16rem 0 0 0;
+    @media screen and (max-width: 768px) {
       font-size: 20vw;
+      text-shadow: 3px 3px 0px rgba(255,255,255, 1);
+      margin: 10rem 2rem 0 0;
     }
+
   }
 `;
 
@@ -75,59 +76,57 @@ const Cosmos = styled.img`
   width: 60%;
   margin-left: -14rem;
   position: absolute;
-  top: 400px;
+  top: 100px;
   left: 250px;
   transform: rotate(180deg) scaleX(-1);
-
-  @media screen and (max-width: 1600px) {
-    top: 300px;
-    left: 60px;
+  @media screen and (max-width: 768px) {
+    top: 500px;
   }
-  @media screen and (max-width: 1200px) {
-    width: 70%;
-    left: 100px;
-  }
-  /* @media screen and (max-width: 600px) {
-    width: 85%;
-    top: 700px;
-    left: 248px;
-    transform: rotate(85deg);
-  } */
 `;
 
 const SpellDescription = styled.div`
   align-self: flex-end;
   max-width: 48vw;    
   z-index: 1;
-  @media screen and (max-width: 600px) {
-    max-width: 100%;
+  margin: 2rem 4rem;
+  @media screen and (max-width: 768px) {
+    margin: 2rem 2rem 0 4rem;
     align-self: flex-start;
+    max-width: 75vw;
   }
+  @media screen and (max-width: 700px) {
+    margin: 2rem 2rem 0 2rem;
+  }
+  
   p {
     font-size: 1.8vw;
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     font-style: italic;
     text-align: right;
-    /* text-shadow: 2px 2px 2px rgba(0,0,0,0.50), 2px 2px 2px rgba(0,0,0,0.50); */
     color: black;
     line-height: 2vw;
-    margin: 2vw 4vw 4vw 0;
-
-  @media screen and (max-width: 1024px) {
-    margin: 4vw 4vw;
+  @media screen and (max-width: 1200px) {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    text-align: right;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 850px) {
     font-size: 1rem;
     line-height: 1.4rem;
+    text-align: right;
+  }  
+  @media screen and (max-width: 768px) {
     text-align: left;
-    margin: 4rem 2rem;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    text-align: left;
   }
   @media screen and (max-width: 420px) {
     font-size: 1rem;
     line-height: 1.4rem;
-    text-align: left;
-    margin: 4rem 1rem;
   }
 }
 `;
@@ -138,12 +137,15 @@ const MiddleRow = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  margin-top: 20rem;
+  height: 800px;
+  margin-top: 10rem;
+  margin-bottom: 8rem;
   z-index: 1;
-  @media screen and (max-width: 1024px) {
-    margin-top: 0%;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 4rem;
   }
-  
+
   p {
     color: white;
     font-size: 2.2vw;
@@ -154,46 +156,70 @@ const MiddleRow = styled.div`
     line-height: 2.4vw;
     max-width: 60vw;
     margin: 0 6rem;
-
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 1024px) {
+      margin: 0 4rem;
+    }
+    @media screen and (max-width: 768px) {
+      margin: 2rem;
       text-align: center;
-      margin: 10rem 1rem 0 1rem;
-      font-size: 6vw;
-      line-height: 7vw;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      max-width: 75vw;
+    }
+    @media screen and (max-width: 600px) {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
       max-width: 100%;
     }
   }
 `;
 
 const ImageBox = styled.div`
+  display: flex;
   width: 100%;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+  }
   img {
     width: 80%;
-    margin: 0 4rem 10rem 4rem;
+    margin: 0 4rem 0 4rem;
+    @media screen and (max-width: 768px) {
+      margin: 10rem auto 0 auto;
+    }
   }
 `;
 
-export const Disclaimer = styled.div`
+const Disclaimer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   margin-top: 10rem;
   width: 100%;
   height: 100%;
-
+  @media screen and (max-width: 768px) {
+    margin: 2rem auto;
+  }
   p:nth-child(2) {
     color: white;
     font-size: 0.8rem;
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     line-height: 1.2rem;
-    max-width: 30vw;
-    margin-top: 8rem;
+    max-width: 50vw;
+    margin-top: 4rem;
     text-align: left;
     @media screen and (max-width: 1024px) {
       max-width: 100%;
       margin: 4rem 1rem;
+    }
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+      margin: 1rem 2rem;
+    }
+    @media screen and (max-width: 320px) {
+      margin: 0 1rem;
     }
   }
 `;
