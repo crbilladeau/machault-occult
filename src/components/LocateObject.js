@@ -8,9 +8,9 @@ import Teleport from './Teleport';
 const LocateObject = () => {
   return (
     <LocateContainer>
-      <Cosmos id="locate-object" src={cosmos} alt="cosmos" />
+      <Cosmos src={cosmos} alt="cosmos" />
       <HeadlinesBox>
-        <h1>locate object</h1>
+        <h1 id="locate-object">locate object</h1>
         <SpellDescription>
           <p>locate the nearest object of a particular kind, such as a certain kind of apparel, jewelry, furniture, tool, or weapon.</p>
         </SpellDescription>

@@ -9,6 +9,7 @@
     "lazy-line-painter": "^1.9.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hook-mighty-mouse": "^1.4.31",
     "react-scripts": "4.0.1",
     "react-scroll": "^1.8.1",
     "styled-components": "^5.2.1",
