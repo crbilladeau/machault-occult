@@ -9,8 +9,8 @@ const Sending = () => {
   return (
     <SendingContainer>
       <HeadlinesBox>
-      <Eye src={goldeye} alt="gold eye" />
-        <h1 id="sending">sending</h1>
+      <Eye src={goldeye} alt="gold eye" id="sending"/>
+        <h1>sending</h1>
         <SpellDescription>
           <p>send a short message of twenty-five words or less to a creature with which you are familiar. the creature hears the message in its mind, recognizes you as the sender if it knows you, and can answer in a like manner immediately.</p>
         </SpellDescription>
