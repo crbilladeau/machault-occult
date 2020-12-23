@@ -143,7 +143,7 @@ const MiddleRow = styled.div`
   z-index: 1;
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    margin-top: 4rem;
+    margin: 4rem 0;
   }
 
   p {
