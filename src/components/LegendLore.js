@@ -43,7 +43,6 @@ const LegendContainer = styled.div`
   background-size: cover;
   background-position: center top;
   position: relative;
-  /* overflow-x: hidden; */
 `;
 
 const Moon = styled.img`

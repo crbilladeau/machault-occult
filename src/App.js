@@ -1,4 +1,5 @@
 import './App.css';
+import styled from 'styled-components';
 import Home from './components/Home';
 // import Icon from './components/Icon';
 import LegendLore from './components/LegendLore';

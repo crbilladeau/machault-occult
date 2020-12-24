@@ -25,11 +25,11 @@ const MobileNav = ({ navOpen, setNavOpen, scrollNav }) => {
           navOpen={navOpen}
         />
         <LinkContainer scrollNav={scrollNav}>
-          <NavLink to="sending" smooth={true} duration={800} spy={true} exact='true' offset={800} onClick={() => setNavOpen(false)}>sending</NavLink>
-          <NavLink to="locate-object" smooth={true} duration={800} spy={true} exact='true' offset={750} onClick={() => setNavOpen(false)}>locate object</NavLink>
           <NavLink to="legend-lore" smooth={true} duration={800} spy={true} exact='true' offset={650} onClick={() => setNavOpen(false)}>legend lore</NavLink>
-          <NavLink to="teleport" smooth={true} duration={800} spy={true} exact='true' offset={750} onClick={() => setNavOpen(false)}>teleport</NavLink>
           <NavLink to="scrying" smooth={true} duration={800} spy={true} exact='true' offset={750} onClick={() => setNavOpen(false)}>scrying</NavLink>
+          <NavLink to="locate-object" smooth={true} duration={800} spy={true} exact='true' offset={750} onClick={() => setNavOpen(false)}>locate object</NavLink>
+          <NavLink to="teleport" smooth={true} duration={800} spy={true} exact='true' offset={750} onClick={() => setNavOpen(false)}>teleport</NavLink>
+          <NavLink to="sending" smooth={true} duration={800} spy={true} exact='true' offset={800} onClick={() => setNavOpen(false)}>sending</NavLink>
         </LinkContainer>
       </NavContainer>
     </NavBar>

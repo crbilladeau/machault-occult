@@ -16,8 +16,6 @@ const Home = () => {
     scroll.scrollToTop();
   }
 
-  // const { angleEye } = useMightyMouse(true, "eye", { x: 45, y: 45 });
-
   const {
     selectedElement: {
       position: { angle },
@@ -65,10 +63,9 @@ export default Home;
 
 const HomeContainer = styled.div`
   background-image: url(${main});
-  background-repeat:no-repeat;
   background-size: cover;
-  background-position: center top;
-  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 const MenuContainer = styled.nav`
@@ -78,7 +75,8 @@ const MenuContainer = styled.nav`
   grid-gap: 0;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   
   @media screen and (max-width: 768px) {
     display: flex;
@@ -106,11 +104,11 @@ const NavLink = styled(Link)`
     justify-self: flex-start;
   }
   :nth-child(4) {
-    align-self: flex-end;
+    align-self: center;
     justify-self: flex-end;
   }
   :nth-child(8) {
-    align-self: flex-end;
+    align-self: center;
     justify-self: flex-start;
   }
   @media screen and (max-width: 768px) {
@@ -133,8 +131,9 @@ const EyeMobile = styled.img`
   @media screen and (max-width: 768px) {
     display: flex;
     width: 60%;
-    margin: auto;
+    margin: 0 0 10rem 0;
     z-index: 4;
+    align-self: center;
   }
   @media screen and (max-width: 420px) {
     width: 80%;
