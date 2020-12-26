@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
+import {motion, useAnimation} from 'framer-motion';
+import { useInView } from "react-intersection-observer";
 import legendlore from '../images/legend-lore.png';
 import prettyodd from '../images/prettyodd.png';
 import eye from '../images/eye.png'
@@ -8,22 +10,94 @@ import OccultSection from './Occult';
 import ScryingSection from './Scrying';
 
 const LegendLore = () => {
+  const moonControls = useAnimation();
+  const [moonRef, moonInView] = useInView();
+
+  const legendTitleControls = useAnimation();
+  const [legendTitleRef, legendTitleInView] = useInView();
+
+  const spellControls = useAnimation();
+  const [spellRef, spellInView] = useInView();
+
+  const moonBoxControls = useAnimation();
+  const [moonBoxRef, moonBoxInView] = useInView();
+
+  useEffect(() => {
+    if (moonInView) {
+      moonControls.start("visible");
+    }
+    if (legendTitleInView) {
+      legendTitleControls.start("visible");
+    }
+    if (spellInView) {
+      spellControls.start("visible");
+    }
+    if (moonBoxInView) {
+      moonBoxControls.start("visible");
+    }
+  }, [moonControls, moonControls, legendTitleControls, legendTitleInView, moonBoxControls, moonBoxInView]);
+
+
   return (
     <LegendContainer>
     
-      <Moon src={moon} alt="moon" />
+      <Moon 
+        src={moon} 
+        alt="moon"
+        ref={moonRef}        
+        animate={moonControls}
+        initial="hidden"
+        variants={{
+          visible: { opacity: 1, rotate: 0 },
+          hidden: { rotate: -60, opacity: 0}
+        }}
+        transition={{ duration: 2.4}}
+      />
       <HeadlinesBox>  
-        <h1 id="legend-lore">legend lore</h1>
-        <SpellDescription><p>the spell brings to your mind a brief summary of the significant lore about the thing you named, consisting of current tales, forgotten stories, or even secret lore that has never been widely known.</p></SpellDescription>
+        <Title 
+          id="legend-lore"           
+          ref={legendTitleRef}
+          animate={legendTitleControls}
+          initial="hidden"
+          variants={{
+            visible: { opacity: 1 },
+            hidden: { opacity: 0}
+          }}
+          transition={{ duration: 1.4 }}
+          >
+          legend lore</Title>
+        <SpellDescription       
+          animate={spellControls}
+          ref={spellRef}
+          initial="hidden"
+          variants={{
+            visible: { opacity: 1, x: '0%' },
+            hidden: { opacity: 0, x: '100%' }
+          }}
+          transition={{ duration: 2.4 }}>
+          <p>the spell brings to your mind a brief summary of the significant lore about the thing you named, consisting of current tales, forgotten stories, or even secret lore that has never been widely known.</p></SpellDescription>
           </HeadlinesBox>
           <MiddleRow>
-            <MoonBox>
+            <MoonBox
+              animate={moonBoxControls}
+              ref={moonBoxRef}
+              initial="hidden"
+              variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0}
+              }}
+              transition={{ duration: 2 }}
+            >
               <MoonSmall src={moon} alt="moon" />
               <Eye src={eye} alt="eye" />
               <h2>Machault<br/>Occult</h2>
               <p>is a prestigious collection of rare and extraordinary magical artefacts meticulously curated from around the world.</p>
             </MoonBox>
-            <Oddities src={prettyodd} alt="shop interior" />
+            <Oddities 
+              src={prettyodd} 
+              alt="shop interior"           
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ repeat: Infinity, duration: 2.5, type: 'spring', bounce: 0.75}} />
           </MiddleRow>
 
       <OccultSection />
@@ -45,7 +119,7 @@ const LegendContainer = styled.div`
   position: relative;
 `;
 
-const Moon = styled.img`
+const Moon = styled(motion.img)`
   width: 67%;
   margin-left: -14rem;
   position: absolute;
@@ -80,7 +154,11 @@ export const HeadlinesBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin: 0 4rem 2rem 4rem;
+  padding: 0 4rem 2rem 4rem;
+  overflow: hidden !important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    position: relative;
   @media screen and (max-width: 768px) {
     margin: 0 2rem 2rem 2rem;
   }
@@ -90,31 +168,33 @@ export const HeadlinesBox = styled.div`
   @media screen and (max-width: 320px) {
     margin: 0;
   }
-  h1 {
-    font-size: 12vw;
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    text-align: right;
-    color: white;
-    text-shadow: 3px 3px 3px rgba(0,0,0,0.50), 3px 3px 3px rgba(0,0,0,0.50);
+`;
+
+const Title = styled(motion.h1)`
+  font-size: 12vw;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  text-align: right;
+  color: white;
+  text-shadow: 3px 3px 3px rgba(0,0,0,0.50), 3px 3px 3px rgba(0,0,0,0.50);
+  margin: 16rem 0 0 0;
+  z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    font-size: 20vw;
     margin: 16rem 0 0 0;
-    z-index: 1;
-    @media screen and (max-width: 768px) {
-      font-size: 20vw;
-      margin: 16rem 0 0 0;
-    }
-    @media screen and (max-width: 600px) {
-      margin: 16rem 2rem 0 0;
-      font-size: 20vw;
-    }
-    @media screen and (max-width: 420px) {
-      margin: 16rem 2rem 0 0;
-      font-size: 24vw;
-    }
+  }
+  @media screen and (max-width: 600px) {
+    margin: 16rem 2rem 0 0;
+    font-size: 20vw;
+  }
+  @media screen and (max-width: 420px) {
+    margin: 16rem 2rem 0 0;
+    font-size: 24vw;
   }
 `;
 
-export const SpellDescription = styled.div`
+export const SpellDescription = styled(motion.div)`
   align-self: flex-end;
   max-width: 46vw;    
   z-index: 1;
@@ -160,8 +240,7 @@ export const SpellDescription = styled.div`
   @media screen and (max-width: 420px) {
     font-size: 1rem;
     line-height: 1.4rem;
-  }
-
+  }  
 }
 `;
 
@@ -184,7 +263,7 @@ const MiddleRow = styled.div`
   }
 `;
 
-const MoonBox = styled.div`
+const MoonBox = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -268,11 +347,12 @@ const Eye = styled.img`
   }
 `;
 
-const Oddities = styled.img`
+const Oddities = styled(motion.img)`
   width: 38%;
   z-index: 1;
   margin: 0 auto;
   @media screen and (max-width: 600px) {
     width: 100%;
+    margin: 1rem;
   }
 `;

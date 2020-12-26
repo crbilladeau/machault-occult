@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {Link, animateScroll as scroll} from 'react-scroll';
+import {motion} from 'framer-motion';
 import useMightyMouse from 'react-hook-mighty-mouse';
 import MobileNav from './MobileNav';
 import main from '../images/main.png';
@@ -23,11 +24,9 @@ const Home = () => {
   } = useMightyMouse(true, 'eye', { x: 45, y: 45 });
 
 
-
   const styleEye = {
     transform: `rotate(${-angle}deg)`,
   };
-
 
   return (
     <>
@@ -40,13 +39,24 @@ const Home = () => {
         <NavLink to="locate-object" smooth={true} duration={500} spy={true} exact='true'>locate object</NavLink>
         <NavLink to="legend-lore" smooth={true} duration={500} spy={true} exact='true'>legend lore</NavLink>
         <NavLink to="teleport" smooth={true} duration={500} spy={true} exact='true'>teleport</NavLink>
-        <Logo src={eyelogo} alt="eye" />        
+        <Logo
+          src={eyelogo} 
+          alt="eye" 
+        />
           <Eye>
             <div id="eye" className="eye" style={styleEye}>
               <div className="pupil" />
             </div>
           </Eye>
-        <EyeMobile src={eyemobile} alt="eye" onClick={() => setNavOpen(!navOpen)} navOpen={navOpen}/>
+        <EyeMobile 
+          src={eyemobile} 
+          alt="eye" 
+          onClick={() => setNavOpen(!navOpen)} 
+          navOpen={navOpen}
+          animate={{
+          scale: [1, 1.1, 1],
+          }}
+          transition={{ repeat: Infinity, duration: 2.5, type: 'spring', bounce: 0.75}} />
         <NavLink to="scrying" smooth={true} duration={500} spy={true} exact='true'>scrying</NavLink>
       </MenuContainer>
     </HomeContainer>
@@ -89,8 +99,10 @@ const NavLink = styled(Link)`
   font-weight: 400;
   font-family: 'Playfair Display', serif;
   font-style: italic;
+  padding: 1rem;
   text-align: center;
   transition: transform 300ms ease 100ms;
+  z-index: 2;
   &:hover {
     cursor: pointer;      
     transform: scale(1.2);
@@ -111,6 +123,10 @@ const NavLink = styled(Link)`
     align-self: center;
     justify-self: flex-start;
   }
+  @media screen and (max-width: 1024px) {
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -126,7 +142,7 @@ const Logo = styled.img`
   }
 `;
 
-const EyeMobile = styled.img`
+const EyeMobile = styled(motion.img)`
   display: none;
   @media screen and (max-width: 768px) {
     display: flex;
@@ -145,14 +161,15 @@ const Eye = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  top: 400px;
+  top: 500px;
   right: 0px;
   position: absolute;
+  z-index: 1;
 
   .eye {
     border-radius: 50%;
-    height: 80px;
-    width: 80px;
+    height: 10px;
+    width: 10px;
     z-index: 2;
   }
     .pupil {
@@ -161,8 +178,6 @@ const Eye = styled.div`
       border-radius: 50%;
       width: 70px;
       height: 70px;
-      left: 50px;
-      top: 35px;
       @media screen and (max-width: 1024px) {
         width: 50px;
         height: 50px;

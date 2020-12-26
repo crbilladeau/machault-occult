@@ -12,7 +12,7 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 500px;
   display: flex;
   flex-direction: row;
