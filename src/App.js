@@ -5,6 +5,7 @@ import Home from './components/Home';
 import LegendLore from './components/LegendLore';
 import LocateObject from './components/LocateObject';
 import Sending from './components/Sending';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <LegendLore />
       <LocateObject />
       <Sending />
+      <Footer />
     </>
   );
 }

@@ -173,7 +173,7 @@ const Disclaimer = styled.div`
   }
   @media screen and (max-width: 420px) {
     color: black;
-    margin: 2rem 1rem;
+    margin: 4rem 1rem;
     text-align: left;
   }
 }
@@ -202,7 +202,7 @@ const Hermit = styled.img`
   width: 50%;
   margin: 0;
   @media screen and (max-width: 768px) {
-    margin: 2rem 0;
+    margin: 4rem 0;
     width: 30%;
   }
   @media screen and (max-width: 420px) {
