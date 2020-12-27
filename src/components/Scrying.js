@@ -92,7 +92,7 @@ const Scrying = () => {
             visible: { opacity: 1 },
             hidden: { opacity: 0 },
           }}
-          transition={{ duration: 1.4, delay: 0.6 }}>
+          transition={{ duration: 1.4}}>
           <Crystal 
             src={crystal} 
             alt="crystal"

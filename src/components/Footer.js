@@ -22,6 +22,14 @@ const FooterContainer = styled.div`
     margin: 2rem 1rem;
     font-family: 'Playfair Display', serif;
     font-weight: 200;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    @media screen and (max-width: 768px) {
+      color: black;
+    }
+    @media screen and (max-width: 768px) {
+      color: white;
+    }
   }
 `;

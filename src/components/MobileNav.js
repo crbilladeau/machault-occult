@@ -49,13 +49,11 @@ const NavBar = styled.nav`
   width: 100%;
   position: fixed;
   z-index: 50;
-  @media screen and (max-width: 768px) {
-    height: 100%;
-    transition: transform 0.3s ease-in-out;
-    transform: ${({ navOpen }) =>
-      navOpen ? 'translateX(0)' : 'translateX(-100%)'};
-    margin: 0;
-  }
+  height: 100%;
+  /* transition: transform 0.3s ease-in-out;
+  transform: ${({ navOpen }) =>
+    navOpen ? 'translateX(0)' : 'translateX(-100%)'}; */
+  margin: 0;
 `;
 
  const CloseButton = styled.img`

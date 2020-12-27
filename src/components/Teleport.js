@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {motion, useAnimation} from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import astro from '../images/astro.png';
-import astroimage from '../images/astro-image.png';
 import bluedoor from '../images/blue-door.jpg';
 
 const Teleport = () => {
@@ -111,7 +110,7 @@ const Title = styled(motion.h1)`
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   color: black;
-    text-shadow: 3px 3px 0 rgba(255,255,255,1);
+    text-shadow: 5px 5px 0 rgba(255,255,255,1);
   margin-left: 4rem;
   z-index: 2;
   /* @media screen and (max-width: 1600px) {
@@ -146,7 +145,7 @@ const SpellDescription = styled(motion.div)`
   }
   @media screen and (max-width: 768px) {
     color: white;
-    text-shadow: 2px 2px 2px rgba(0,0,0,1), 2px 2px 2px rgba(0,0,0,1);
+    text-shadow: 1px 1px 1px rgba(0,0,0,1), 1px 1px 1px rgba(0,0,0,1);
     margin: 2rem 2rem 0 2rem;
     font-size: 1rem;
     line-height: 1.4rem;

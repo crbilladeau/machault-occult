@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import {motion, useAnimation} from 'framer-motion';
 import { useInView } from "react-intersection-observer";
+import Footer from './Footer';
 import sending from '../images/sending.png';
 import hermit from '../images/hermit.png';
 import goldeye from '../images/goldeye.png';
@@ -53,7 +54,6 @@ const Sending = () => {
       <Eye 
         src={goldeye} 
         alt="gold eye" 
-        id="sending" 
         ref={eyeRef}
         animate={eyeControls}
         initial='hidden'
@@ -63,7 +63,8 @@ const Sending = () => {
         }}
         transition={{ duration: 2 }}
       />
-        <Title
+        <Title        
+          id="sending" 
           ref={sendingTitleRef}
           animate={sendingTitleControls}
           initial="hidden"
@@ -133,6 +134,8 @@ const Sending = () => {
           </DisclaimerDescription>
         </Disclaimer>
       </MiddleRow>
+
+      <Footer />
     </SendingContainer>
   )
 }
@@ -149,7 +152,7 @@ const SendingContainer = styled.div`
   margin-top: 20rem;
   display: flex;
   flex-direction: column;
-  height: 2000px;
+  /* height: 2000px; */
   overflow: hidden !important;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;

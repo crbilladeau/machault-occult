@@ -161,7 +161,7 @@ const Eye = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  top: 500px;
+  top: 450px;
   right: 0px;
   position: absolute;
   z-index: 1;
