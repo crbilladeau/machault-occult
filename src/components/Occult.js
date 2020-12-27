@@ -11,32 +11,32 @@ import hand2 from '../images/hand2.png';
 import dust from '../images/dust.png';
 
 const Occult = () => {
-  const titleControls = useAnimation();
-  const [titleRef, titleInView] = useInView();
+  const occultTitleControls = useAnimation();
+  const [occultTitleRef, occultTitleInView] = useInView({triggerOnce: true});
 
   const imageControls = useAnimation();
-  const [imageRef, imageInView] = useInView();
+  const [imageRef, imageInView] = useInView({triggerOnce: true});
 
   useEffect(() => {
-    if (titleInView) {
-      titleControls.start('visible');
+    if (occultTitleInView) {
+      occultTitleControls.start('visible');
     }
     if (imageInView) {
       imageControls.start('visible');
     }
-  }, [titleControls, imageControls, titleInView, imageInView]);
+  }, [occultTitleControls, imageControls, occultTitleInView, imageInView]);
 
   return (
     <>
       <OccultHeadline
-        ref={titleRef}
-        animate={titleControls}
+        ref={occultTitleRef}
+        animate={occultTitleControls}
         initial='hidden'
         variants={{
           visible: { opacity: 1, y: 0 },
           hidden: { opacity: 0, y: -100 },
         }}
-        transition={{ duration: 1 }}>
+        transition={{ duration: 2 }}>
         <h2>
           occult<span>[ uh-kuhlt, ok-uhlt ]</span>
         </h2>
@@ -121,7 +121,9 @@ const Occult = () => {
           hidden: { opacity: 0 },
         }}
         transition={{ duration: 1.4, delay: 1 }}>
-        <Hand src={hand1} alt='hand'           
+        <Hand 
+          src={hand1} 
+          alt='hand'           
           animate={{ scale: [1, 1.05, 1], y: [0, -10, 0], rotate: [20, 0, 20] }}
           transition={{
             repeat: Infinity,
@@ -130,7 +132,9 @@ const Occult = () => {
             bounce: 0.75,
           }}
           />
-        <Hand src={hand2} alt='hand' 
+        <Hand 
+          src={hand2} 
+          alt='hand' 
           animate={{ scale: [1, 1.05, 1], y: [0, -10, 0], rotate: [-20, 0, -20] }}
           transition={{
             repeat: Infinity,

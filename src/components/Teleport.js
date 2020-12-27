@@ -1,21 +1,78 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
+import {motion, useAnimation} from 'framer-motion';
+import { useInView } from "react-intersection-observer";
 import astro from '../images/astro.png';
 import astroimage from '../images/astro-image.png';
 import bluedoor from '../images/blue-door.jpg';
 
 const Teleport = () => {
+  const teleportTitleControls = useAnimation();
+  const [teleportTitleRef, teleportTitleInView] = useInView({triggerOnce: true});
+
+  const teleportSpellControls = useAnimation();
+  const [teleportSpellRef, teleportSpellInView] = useInView({triggerOnce: true});
+
+  const midRowControls = useAnimation();
+  const [midRowRef, midRowInView] = useInView({triggerOnce: true});
+
+  useEffect(() => {
+    if (teleportTitleInView) {
+      teleportTitleControls.start("visible");
+    }
+    if (teleportSpellInView) {
+      teleportSpellControls.start("visible");
+    }
+    if (midRowInView) {
+      midRowControls.start("visible");
+    }
+  }, [teleportTitleControls, teleportTitleInView, teleportSpellControls, teleportSpellInView, midRowControls, midRowInView]);
+
   return (
     <TeleportHeadline>
-      <h1 id="teleport">teleport</h1>
-      <SpellDescription>
+      <Title 
+        id="teleport"
+        ref={teleportTitleRef}
+        animate={teleportTitleControls}
+        initial="hidden"
+        variants={{
+          visible: { opacity: 1 },
+          hidden: { opacity: 0}
+        }}
+        transition={{ duration: 2 }}
+      >
+        teleport
+      </Title>
+      <SpellDescription
+        animate={teleportSpellControls}
+        ref={teleportSpellRef}
+        initial="hidden"
+        variants={{
+          visible: { opacity: 1, x: '0%' },
+          hidden: { opacity: 0, x: '-50%' }
+        }}
+        transition={{ duration: 2.4 }}
+      >
         <p>instantly transports you and up to eight willing creatures of your choice that you can see within range, or a single object, to a destination you select.</p>
-      </SpellDescription>
-      <Astro src={astro} alt="astrology circle" />
-      <MiddleRow>
+      </SpellDescription>   
+      <Astro 
+        src={astro} 
+        alt="astrology circle"
+        animate={{ rotate: 360 }}
+        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+      />
+      <MiddleRow
+        ref={midRowRef}
+        animate={midRowControls}
+        initial='hidden'
+        variants={{
+          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, y: -50 },
+        }}
+        transition={{ duration: 2 }}
+      >
         
         <img src={bluedoor} alt="blue door" />
-        <img src={astroimage} alt="blue door with astrology circle" />         
         <Disclaimer>
         <p>The true location of our shop changes each day. Only skilled magic users capable of advanced divination can ascertain our daily location. For the uniniated, our Google Maps coordinates are available on our Facebook page.**</p>
         <p>** Machault Occult and its owner(s) are not responsible or liable for accidental banishments to other planes of existence as a result of unlawful entry onto the premises or entering outside of business hours, nor for any items “lost” or left behind on the property. Machault Occult reserves the right to banish any customers at the owner’s discretion. For Mr. Miniti's safety, children are not allowed on the premises at any time. We will not update our Facebook page or post consistent business hours - stop asking, or we will delete it.</p>
@@ -33,29 +90,43 @@ const TeleportHeadline = styled.div`
   align-items: flex-start;
   justify-content: center;
   position: relative;
-  
-  h1 {
-    font-size: 12vw;
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    color: white;
-    text-shadow: 3px 3px 3px rgba(0,0,0,0.50), 3px 3px 3px rgba(0,0,0,0.50);
-    margin-left: 4rem;
-    z-index: 2;
-    @media screen and (max-width: 1600px) {
-      color: black;
-      text-shadow: 3px 3px 0 rgba(255,255,255,1);
-    }
-    @media screen and (max-width: 768px) {
-      font-size: 20vw;
-      color: white;
-      text-shadow: 3px 3px 3px rgba(0,0,0,1), 3px 3px 3px rgba(0,0,0,1);
-      margin-left: 2rem;
-    }
+  height: 200vh;
+  overflow: hidden !important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    position: relative;
+  @media screen and (max-width: 1600px) {
+    height: 160vh;
+  }
+  @media screen and (max-width: 1024px) {
+    height: 100vh;
+  }
+  @media screen and (max-width: 768px) {
+    height: 100%;
   }
 `;
 
-const SpellDescription = styled.div`
+const Title = styled(motion.h1)`
+  font-size: 12vw;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: black;
+    text-shadow: 3px 3px 0 rgba(255,255,255,1);
+  margin-left: 4rem;
+  z-index: 2;
+  /* @media screen and (max-width: 1600px) {
+    color: black;
+    text-shadow: 3px 3px 0 rgba(255,255,255,1);
+  } */
+  @media screen and (max-width: 768px) {
+    font-size: 20vw;
+    color: white;
+    text-shadow: 3px 3px 3px rgba(0,0,0,1), 3px 3px 3px rgba(0,0,0,1);
+    margin-left: 2rem;
+  }
+`;
+
+const SpellDescription = styled(motion.div)`
   align-self: flex-start;
   margin: 3rem 4rem 0 4rem;
   max-width: 40vw;
@@ -64,13 +135,14 @@ const SpellDescription = styled.div`
   font-weight: 400;
   font-style: italic;
   text-align: left;
-  text-shadow: 2px 2px 2px rgba(0,0,0,0.50), 2px 2px 2px rgba(0,0,0,0.50);
+  text-shadow: 2px 2px 2px rgba(0,0,0,1), 2px 2px 2px rgba(0,0,0,1);
+
   color: white;
   line-height: 2vw;
   z-index: 2;
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 2500px) {
     color: black;
-    text-shadow: none;
+    text-shadow: 2px 2px 0 rgba(255,255,255,1);
   }
   @media screen and (max-width: 768px) {
     color: white;
@@ -87,17 +159,24 @@ const SpellDescription = styled.div`
   }
 `;
 
-const Astro = styled.img`
+const Astro = styled(motion.img)`
   width: 60vw;
   position: absolute;
-  top: 100px;
+  top: 600px;
   right: 0;
+  @media screen and (max-width: 1600px) {
+    top: 290px;
+  }
+  @media screen and (max-width: 1024px) {
+    top: 80px;
+  }
   @media screen and (max-width: 768px) {
-    display: none;
+    width: 40%;
+    top: 0px;
   }
 `;
 
-const MiddleRow = styled.div`
+const MiddleRow = styled(motion.div)`
   display: flex;
   flex-direction: row-reverse;
   width: 100%;  
@@ -116,7 +195,9 @@ const MiddleRow = styled.div`
     margin: 5vw 10vw 0 0;
     align-self: flex-start;
     @media screen and (max-width: 768px) {
-      display: none;
+      align-self: center;
+      width: 80%;
+      margin: 2rem;
     }
   }
   img:nth-child(2) {
@@ -182,7 +263,7 @@ const Disclaimer = styled.div`
     text-align: left;
     @media screen and (max-width: 1024px) {
       max-width: 100%;
-      margin: 4rem 1rem;
+      margin: 4rem 0rem;
     }
     @media screen and (max-width: 768px) {
       max-width: 100%;

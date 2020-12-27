@@ -11,16 +11,16 @@ import ScryingSection from './Scrying';
 
 const LegendLore = () => {
   const moonControls = useAnimation();
-  const [moonRef, moonInView] = useInView();
+  const [moonRef, moonInView] = useInView({triggerOnce: true});
 
   const legendTitleControls = useAnimation();
-  const [legendTitleRef, legendTitleInView] = useInView();
+  const [legendTitleRef, legendTitleInView] = useInView({triggerOnce: true});
 
-  const spellControls = useAnimation();
-  const [spellRef, spellInView] = useInView();
+  const legendSpellControls = useAnimation();
+  const [legendSpellRef, legendSpellInView] = useInView({triggerOnce: true});
 
   const moonBoxControls = useAnimation();
-  const [moonBoxRef, moonBoxInView] = useInView();
+  const [moonBoxRef, moonBoxInView] = useInView({triggerOnce: true});
 
   useEffect(() => {
     if (moonInView) {
@@ -29,13 +29,13 @@ const LegendLore = () => {
     if (legendTitleInView) {
       legendTitleControls.start("visible");
     }
-    if (spellInView) {
-      spellControls.start("visible");
+    if (legendSpellInView) {
+      legendSpellControls.start("visible");
     }
     if (moonBoxInView) {
       moonBoxControls.start("visible");
     }
-  }, [moonControls, moonControls, legendTitleControls, legendTitleInView, moonBoxControls, moonBoxInView]);
+  }, [moonControls, moonInView, legendTitleControls, legendTitleInView, moonBoxControls, moonBoxInView, legendSpellControls, legendSpellInView]);
 
 
   return (
@@ -49,7 +49,7 @@ const LegendLore = () => {
         initial="hidden"
         variants={{
           visible: { opacity: 1, rotate: 0 },
-          hidden: { rotate: -60, opacity: 0}
+          hidden: { rotate: -90, opacity: 0}
         }}
         transition={{ duration: 2.4}}
       />
@@ -63,16 +63,16 @@ const LegendLore = () => {
             visible: { opacity: 1 },
             hidden: { opacity: 0}
           }}
-          transition={{ duration: 1.4 }}
+          transition={{ duration: 2 }}
           >
           legend lore</Title>
         <SpellDescription       
-          animate={spellControls}
-          ref={spellRef}
+          animate={legendSpellControls}
+          ref={legendSpellRef}
           initial="hidden"
           variants={{
             visible: { opacity: 1, x: '0%' },
-            hidden: { opacity: 0, x: '100%' }
+            hidden: { opacity: 0, x: '50%' }
           }}
           transition={{ duration: 2.4 }}>
           <p>the spell brings to your mind a brief summary of the significant lore about the thing you named, consisting of current tales, forgotten stories, or even secret lore that has never been widely known.</p></SpellDescription>
@@ -89,7 +89,12 @@ const LegendLore = () => {
               transition={{ duration: 2 }}
             >
               <MoonSmall src={moon} alt="moon" />
-              <Eye src={eye} alt="eye" />
+              <Eye 
+                src={eye} 
+                alt="eye"               
+                animate={{opacity: [0, 1, 0]}}
+                transition={{ repeat: Infinity, duration: 4, type: 'spring'}}
+              />
               <h2>Machault<br/>Occult</h2>
               <p>is a prestigious collection of rare and extraordinary magical artefacts meticulously curated from around the world.</p>
             </MoonBox>
@@ -154,13 +159,12 @@ export const HeadlinesBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 0 4rem 2rem 4rem;
   overflow: hidden !important;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     position: relative;
   @media screen and (max-width: 768px) {
-    margin: 0 2rem 2rem 2rem;
+    margin: 0;
   }
   @media screen and (max-width: 600px) {
     margin: 0;
@@ -177,12 +181,12 @@ const Title = styled(motion.h1)`
   text-align: right;
   color: white;
   text-shadow: 3px 3px 3px rgba(0,0,0,0.50), 3px 3px 3px rgba(0,0,0,0.50);
-  margin: 16rem 0 0 0;
+  margin: 16rem 4rem 0 0;
   z-index: 1;
 
   @media screen and (max-width: 768px) {
     font-size: 20vw;
-    margin: 16rem 0 0 0;
+    margin: 16rem 2rem 0 0;
   }
   @media screen and (max-width: 600px) {
     margin: 16rem 2rem 0 0;
@@ -198,17 +202,23 @@ export const SpellDescription = styled(motion.div)`
   align-self: flex-end;
   max-width: 46vw;    
   z-index: 1;
-  margin: 3rem 0 6vw 0;
+  margin: 3rem 4rem 8rem 0;
   @media screen and (max-width: 1200px) {
     max-width: 40vw;
+    margin: 3rem 4rem 6rem 0;
+  }
+  @media screen and (max-width: 1024px) {
+    max-width: 40vw;
+    margin: 3rem 4rem 4rem 0;
   }
   @media screen and (max-width: 768px) {
     max-width: 50vw;
+    margin: 3rem 2rem 4rem 0;
   }
   @media screen and (max-width: 600px) {
     max-width: 100%;
     align-self: flex-start;
-    margin: 6rem 1rem 0 1rem;
+    margin: 6rem 2rem 0 2rem;
   }
   @media screen and (max-width: 420px) {
     margin: 4rem 1rem 0 1rem;
@@ -335,7 +345,7 @@ const MoonBox = styled(motion.div)`
   }
 `;
 
-const Eye = styled.img`
+const Eye = styled(motion.img)`
   position: absolute;
   top: 6.5vw;
   left: 7.45vw;
@@ -352,7 +362,7 @@ const Oddities = styled(motion.img)`
   z-index: 1;
   margin: 0 auto;
   @media screen and (max-width: 600px) {
-    width: 100%;
+    width: 90%;
     margin: 1rem;
   }
 `;
