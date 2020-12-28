@@ -35,10 +35,10 @@ const Home = () => {
     ) : (
     <HomeContainer>
       <MenuContainer scrollNav={scrollNav}>
-        <NavLink to="sending" smooth={true} duration={500} spy={true} exact='true'>sending</NavLink>
-        <NavLink to="locate-object" smooth={true} duration={500} spy={true} exact='true'>locate object</NavLink>
-        <NavLink to="legend-lore" smooth={true} duration={500} spy={true} exact='true'>legend lore</NavLink>
-        <NavLink to="teleport" smooth={true} duration={500} spy={true} exact='true'>teleport</NavLink>
+        <NavLink to="sending" smooth={true} duration={1500} spy={true} exact='true'>sending</NavLink>
+        <NavLink to="locate-object" smooth={true} duration={1500} spy={true} exact='true'>locate object</NavLink>
+        <NavLink to="legend-lore" smooth={true} duration={1500} spy={true} exact='true'>legend lore</NavLink>
+        <NavLink to="teleport" smooth={true} duration={1500} spy={true} exact='true'>teleport</NavLink>
         <Logo
           src={eyelogo} 
           alt="eye" 
@@ -57,7 +57,7 @@ const Home = () => {
           scale: [1, 1.1, 1],
           }}
           transition={{ repeat: Infinity, duration: 2.5, type: 'spring', bounce: 0.75}} />
-        <NavLink to="scrying" smooth={true} duration={500} spy={true} exact='true'>scrying</NavLink>
+        <NavLink to="scrying" smooth={true} duration={1500} spy={true} exact='true'>scrying</NavLink>
       </MenuContainer>
     </HomeContainer>
     )
