@@ -105,7 +105,7 @@ const Scrying = () => {
             }}
           />
           <p>
-            Havi Miniti is one of the world’s most venerable wizards. He has co-owned and operated Machault Occult with his late husband, Tanum Machault, for the last several decades. Do not ask him how old he is.
+            Havi Miniti is one of the world’s most venerable wizards. He has co-owned and operated Machault Occult with his husband, Tanum Machault, for the last several decades. Do not ask him how old he is.
           </p>       
         </About>
       </ScryingHeadline>
