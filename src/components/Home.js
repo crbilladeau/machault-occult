@@ -13,10 +13,6 @@ const Home = () => {
 
   const [navOpen, setNavOpen] = useState(false);
 
-  // const toggleHome = () => {
-  //   scroll.scrollToTop();
-  // }
-
   const {
     selectedElement: {
       position: { angle },
