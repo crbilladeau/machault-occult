@@ -129,7 +129,7 @@ const Sending = () => {
             }}
             transition={{ duration: 2 }}  
           >
-            ** Please respect the privacy of Mr. Miniti. If you have a question, do not call, whether by magical means or otherwise. Inquiries about Arnam Kingstar and the Cult of Sorrows should be sent to Joaquin Calloway, The Nightingale. Any attempts made to contact Mr. Miniti directly will be filtered by magic and ignored, and you may becpme cursed at your own risk. If a request makes it to Mr. Miniti through his intern and he deems it worthy of his time, he might get back to you in the next decade.
+            ** Please respect the privacy of Mr. Miniti. If you have a question, do not call, whether by magical means or otherwise. Inquiries about Arnam Kingstar and the Cult of Sorrows should be sent to Joaquin Calloway, The Nightingale. Any attempts made to contact Mr. Miniti directly will be filtered by magic and ignored, and you may become cursed at your own risk. If a request makes it to Mr. Miniti through his intern and he deems it worthy of his time, he might get back to you in the next decade.
           </DisclaimerDescription>
         </Disclaimer>
       </MiddleRow>
