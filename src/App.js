@@ -6,6 +6,7 @@ import Icon from './components/Icon';
 import LegendLore from './components/LegendLore';
 import LocateObject from './components/LocateObject';
 import Sending from './components/Sending';
+import {MobileEye} from './components/Icon';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -13,6 +14,17 @@ function App() {
   useEffect(() => {
     setTimeout(() => setLoading(false), 6000)
   }, []);
+
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 768);
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 768);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  });
 
   return (
     <>
@@ -27,7 +39,13 @@ function App() {
         <Sending />
       </motion.div>
       ) : (
-        <Icon />
+        <>
+          {isDesktop ? (
+          <Icon />
+        ) : (
+          <MobileEye />
+        )}
+      </>
       )}
     </>
   );

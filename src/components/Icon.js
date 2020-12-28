@@ -1,20 +1,29 @@
 import React, {useEffect} from "react";
 import LazyLinePainter from 'lazy-line-painter';
 import styled from 'styled-components';
+import eye from '../images/eye.gif';
 
 const EyeContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100%auto;
+  width: 100%;
 `;
 
 const HaviEye = styled.svg`
-  width: 12vw;
-  height: 12vh;
+  width: 20vw;
+  height: 20vh;
   position: relative;
   overflow: visible;
+  @media screen and (max-width: 768px) {
+    width: 50vw;
+    height: 50vh;
+  }
+`;
+
+const MobileHaviEye = styled.img`
+  width: 25vw;
 `;
 
 function Icon() {
@@ -36,7 +45,7 @@ function Icon() {
         className="lazy-line-painter"
         data-llp-composed="true"
         preserveAspectRatio="xMidYMid meet"
-        version="1.1"
+        version="1.9.6"
         viewBox="0 0 400 400"
         id="havieye"
       >
@@ -286,3 +295,11 @@ function Icon() {
 }
 
 export default Icon;
+
+export const MobileEye = () => {
+  return (
+    <EyeContainer>
+      <MobileHaviEye src={eye} />
+    </EyeContainer>
+  )
+}

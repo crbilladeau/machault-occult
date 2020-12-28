@@ -165,6 +165,9 @@ const Eye = styled.div`
   right: 0px;
   position: absolute;
   z-index: 1;
+  @media screen and (max-height: 800px) {
+    top: 350px;   
+  }
 
   .eye {
     border-radius: 50%;
@@ -178,6 +181,7 @@ const Eye = styled.div`
       border-radius: 50%;
       width: 70px;
       height: 70px;
+
       @media screen and (max-width: 1024px) {
         width: 50px;
         height: 50px;

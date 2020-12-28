@@ -49,7 +49,7 @@ const Sending = () => {
   }, [sendingTitleInView, sendingTitleControls, sendingSpellInView, sendingSpellControls, eyeInView, eyeControls, disclaimerInView, disclaimerControls, sendingControls, sendingInView, hermitInView, hermitControls]);
 
   return (
-    <SendingContainer>
+    <SendingContainer id="sending">
       <HeadlinesBox>
       <Eye 
         src={goldeye} 
@@ -63,8 +63,7 @@ const Sending = () => {
         }}
         transition={{ duration: 2 }}
       />
-        <Title        
-          id="sending" 
+        <Title    
           ref={sendingTitleRef}
           animate={sendingTitleControls}
           initial="hidden"
@@ -152,7 +151,6 @@ const SendingContainer = styled.div`
   margin-top: 20rem;
   display: flex;
   flex-direction: column;
-  /* height: 2000px; */
   overflow: hidden !important;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -245,9 +243,6 @@ const MiddleRow = styled.div`
     flex-direction: column;
     margin-bottom: 10rem;
   }
-  /* @media screen and (max-width: 420px) {
-    height: 100vh;
-  } */
   `;
 
 const Disclaimer = styled.div`

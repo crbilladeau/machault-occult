@@ -217,10 +217,10 @@ const MiddleRow = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 800px;
-  margin-top: 10rem;
+  margin-top: 20rem;
   margin-bottom: 8rem;
   z-index: 1;
+
   @media screen and (max-width: 768px) {
     flex-direction: column;
     margin: 4rem 0;
@@ -263,6 +263,7 @@ const ImageBox = styled(motion.div)`
   }
   img {
     width: 80%;
+    height: 100%;
     margin: 0 4rem 0 4rem;
     @media screen and (max-width: 768px) {
       margin: 10rem auto 0 auto;
@@ -277,7 +278,6 @@ const Disclaimer = styled(motion.div)`
   align-items: center;
   margin-top: 10rem;
   width: 100%;
-  height: 100%;
   @media screen and (max-width: 768px) {
     margin: 2rem auto;
   }
