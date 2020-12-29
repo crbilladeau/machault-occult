@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/crbilladeau/machault-occult">
-    <img src="public/eye.png" alt="Logo" width="32" height="32">
+    <img src="public/eye-icon.png" alt="Logo" width="32" height="32">
   </a>
 
   <h2 align="center">Machault Occult</h3>
