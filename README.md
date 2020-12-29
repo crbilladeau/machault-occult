@@ -1,8 +1,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/crbilladeau/watcher">
-    <img src="public/favicon-32x32.png" alt="Logo" width="32" height="32">
+  <a href="https://github.com/crbilladeau/machault-occult">
+    <img src="public/eye.png" alt="Logo" width="32" height="32">
   </a>
 
   <h2 align="center">Machault Occult</h3>
@@ -11,7 +11,7 @@
     A mock used occult items shop made for a friend's dungeons & dragons character. Deployed to Google Firebase.
     <br />
     <br />
-     <img src="https://github.com/crbilladeau/portfolio/blob/master/src/assets/images/watcher.png?raw=true" alt="Occult Machault Screenshot" width="1000">
+     <img src="https://github.com/crbilladeau/machault-occult/blob/master/src/images/machault-occult.png?raw=true" alt="Occult Machault Screenshot" width="1000">
     <br />
   </p>
   <h2 align="center"><a href="https://machault-occult.web.app/">View Demo</a></h2>
@@ -61,7 +61,7 @@ Machault Occult is a mock landing page website for a magical items pawn shop for
 
 * [React](https://reactjs.org/)
 * [Firebase](https://firebase.google.com/)
-* [syled components](https://styled-components.com/)
+* [styled components](https://styled-components.com/)
 
 
 
