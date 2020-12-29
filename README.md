@@ -12,6 +12,7 @@
     <br />
     <br />
      <img src="https://github.com/crbilladeau/machault-occult/blob/master/src/images/machault-occult.png?raw=true" alt="Occult Machault Screenshot" width="1000">
+  <img src="https://github.com/crbilladeau/machault-occult/blob/master/src/images/machault-occult2.png?raw=true" alt="Occult Machault Screenshot" width="1000">
     <br />
   </p>
   <h2 align="center"><a href="https://machault-occult.web.app/">View Demo</a></h2>
