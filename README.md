@@ -52,7 +52,7 @@
 <div align="center">
    <div style="display: flex; align-items: flex-start;">
      <img src="https://github.com/crbilladeau/machault-occult/blob/master/src/images/mobile.png?raw=true" alt="Machault Occult Mobile Screenshot" width="400">
-     <img src="https://github.com/crbilladeau/machault-occult/blob/master/src/images/mobile2.png.png?raw=true" alt="Machault Occult Mobile Screenshot" width="400">
+     <img src="https://github.com/crbilladeau/machault-occult/blob/master/src/images/mobile2.png?raw=true" alt="Machault Occult Mobile Screenshot" width="400">
   </div>
 </div>
 
