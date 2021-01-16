@@ -1,7 +1,6 @@
-  
 import React, { useLayoutEffect } from 'react';
 import styled from 'styled-components';
-import {Link, animateScroll as scroll} from 'react-scroll';
+import { Link, animateScroll as scroll } from 'react-scroll';
 import close from '../images/close.png';
 
 const MobileNav = ({ navOpen, setNavOpen, scrollNav }) => {
@@ -16,20 +15,20 @@ const MobileNav = ({ navOpen, setNavOpen, scrollNav }) => {
   useLockBodyScroll();
 
   return (
-    <NavBar navOpen={navOpen} >
+    <NavBar navOpen={navOpen}>
       <NavContainer>
         <CloseButton
           src={close}
-          alt='close button'
+          alt="close button"
           onClick={() => setNavOpen(!navOpen)}
           navOpen={navOpen}
         />
         <LinkContainer scrollNav={scrollNav}>
-          <NavLink to="legend-lore" smooth={true} duration={800} spy={true} exact='true' offset={750} onClick={() => setNavOpen(false)}>legend lore</NavLink>
-          <NavLink to="scrying" smooth={true} duration={800} spy={true} exact='true' offset={800} onClick={() => setNavOpen(false)}>scrying</NavLink>
-          <NavLink to="locate-object" smooth={true} duration={800} spy={true} exact='true' offset={800} onClick={() => setNavOpen(false)}>locate object</NavLink>
-          <NavLink to="teleport" smooth={true} duration={800} spy={true} exact='true' offset={800} onClick={() => setNavOpen(false)}>teleport</NavLink>
-          <NavLink to="sending" smooth={true} duration={800} spy={true} exact='true' offset={800} onClick={() => setNavOpen(false)}>sending</NavLink>
+          <NavLink to="legend-lore" smooth duration={800} spy exact="true" offset={750} onClick={() => setNavOpen(false)}>legend lore</NavLink>
+          <NavLink to="scrying" smooth duration={800} spy exact="true" offset={800} onClick={() => setNavOpen(false)}>scrying</NavLink>
+          <NavLink to="locate-object" smooth duration={800} spy exact="true" offset={800} onClick={() => setNavOpen(false)}>locate object</NavLink>
+          <NavLink to="teleport" smooth duration={800} spy exact="true" offset={800} onClick={() => setNavOpen(false)}>teleport</NavLink>
+          <NavLink to="sending" smooth duration={800} spy exact="true" offset={800} onClick={() => setNavOpen(false)}>sending</NavLink>
         </LinkContainer>
       </NavContainer>
     </NavBar>
@@ -51,19 +50,18 @@ const NavBar = styled.nav`
   z-index: 50;
   height: 100%;
   /* transition: transform 0.3s ease-in-out;
-  transform: ${({ navOpen }) =>
-    navOpen ? 'translateX(0)' : 'translateX(-100%)'}; */
+  transform: ${({ navOpen }) => (navOpen ? 'translateX(0)' : 'translateX(-100%)')}; */
   margin: 0;
 `;
 
- const CloseButton = styled.img`
+const CloseButton = styled.img`
   align-self: flex-end;
   margin: 1.5em 1.5em;
   width: 64px;
   cursor: pointer;
 `;
 
- const NavContainer = styled.div`
+const NavContainer = styled.div`
   display: flex;
   z-index: 50;
   @media screen and (min-width: 769px) {
@@ -79,7 +77,7 @@ const NavBar = styled.nav`
   }
 `;
 
- const LinkContainer = styled.div`
+const LinkContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -99,4 +97,3 @@ const NavLink = styled(Link)`
   font-style: italic;
   text-align: center;
 `;
-

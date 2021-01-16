@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import {Link, animateScroll as scroll} from 'react-scroll';
-import {motion} from 'framer-motion';
+import { Link, animateScroll as scroll } from 'react-scroll';
+import { motion } from 'framer-motion';
 import useMightyMouse from 'react-hook-mighty-mouse';
 import MobileNav from './MobileNav';
 import main from '../images/main.png';
@@ -19,51 +19,51 @@ const Home = () => {
     },
   } = useMightyMouse(true, 'eye', { x: 45, y: 45 });
 
-
   const styleEye = {
     transform: `rotate(${-angle}deg)`,
   };
 
   return (
     <>
-    {navOpen ? (
-      <MobileNav setNavOpen={setNavOpen} navOpen={navOpen} />
-    ) : (
-    <HomeContainer>
-      <MenuContainer scrollNav={scrollNav}>
-        <NavLink to="sending" smooth={true} duration={1500} spy={true} exact='true'>sending</NavLink>
-        <NavLink to="locate-object" smooth={true} duration={1500} spy={true} exact='true'>locate object</NavLink>
-        <NavLink to="legend-lore" smooth={true} duration={1500} spy={true} exact='true'>legend lore</NavLink>
-        <NavLink to="teleport" smooth={true} duration={1500} spy={true} exact='true'>teleport</NavLink>
-        <Logo
-          src={eyelogo} 
-          alt="eye" 
-        />
-          <Eye>
-            <div id="eye" className="eye" style={styleEye}>
-              <div className="pupil" />
-            </div>
-          </Eye>
-        <EyeMobile 
-          src={eyemobile} 
-          alt="eye" 
-          onClick={() => setNavOpen(!navOpen)} 
-          navOpen={navOpen}
-          animate={{
-          scale: [1, 1.1, 1],
-          }}
-          transition={{ repeat: Infinity, duration: 2.5, type: 'spring', bounce: 0.75}} />
-        <NavLink to="scrying" smooth={true} duration={1500} spy={true} exact='true'>scrying</NavLink>
-      </MenuContainer>
-    </HomeContainer>
-    )
-    }
-  </>
-  )
-}
+      {navOpen ? (
+        <MobileNav setNavOpen={setNavOpen} navOpen={navOpen} />
+      ) : (
+        <HomeContainer>
+          <MenuContainer scrollNav={scrollNav}>
+            <NavLink to="sending" smooth duration={1500} spy exact="true">sending</NavLink>
+            <NavLink to="locate-object" smooth duration={1500} spy exact="true">locate object</NavLink>
+            <NavLink to="legend-lore" smooth duration={1500} spy exact="true">legend lore</NavLink>
+            <NavLink to="teleport" smooth duration={1500} spy exact="true">teleport</NavLink>
+            <Logo
+              src={eyelogo}
+              alt="eye"
+            />
+            <Eye>
+              <div id="eye" className="eye" style={styleEye}>
+                <div className="pupil" />
+              </div>
+            </Eye>
+            <EyeMobile
+              src={eyemobile}
+              alt="eye"
+              onClick={() => setNavOpen(!navOpen)}
+              navOpen={navOpen}
+              animate={{
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                repeat: Infinity, duration: 2.5, type: 'spring', bounce: 0.75,
+              }}
+            />
+            <NavLink to="scrying" smooth duration={1500} spy exact="true">scrying</NavLink>
+          </MenuContainer>
+        </HomeContainer>
+      )}
+    </>
+  );
+};
 
 export default Home;
-
 
 // styles
 

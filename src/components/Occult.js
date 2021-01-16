@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion} from 'framer-motion';
+import Fade from 'react-reveal/Fade';
+
 import cup from '../images/cup.png';
 import crystalball from '../images/crystalball.png';
 import crown from '../images/crown.png';
@@ -11,138 +12,110 @@ import hand2 from '../images/hand2.png';
 import dust from '../images/dust.png';
 
 const Occult = () => {
-  const occultTitleControls = useAnimation();
-  const [occultTitleRef, occultTitleInView] = useInView({triggerOnce: true});
-
-  const imageControls = useAnimation();
-  const [imageRef, imageInView] = useInView({triggerOnce: true});
-
-  useEffect(() => {
-    if (occultTitleInView) {
-      occultTitleControls.start('visible');
-    }
-    if (imageInView) {
-      imageControls.start('visible');
-    }
-  }, [occultTitleControls, imageControls, occultTitleInView, imageInView]);
-
   return (
     <>
-      <OccultHeadline
-        ref={occultTitleRef}
-        animate={occultTitleControls}
-        initial='hidden'
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: -100 },
-        }}
-        transition={{ duration: 2 }}>
-        <h2>
-          occult<span>[ uh-kuhlt, ok-uhlt ]</span>
-        </h2>
-        <SpellDescription>
-          1. of or relating to magic, astrology, or any system claiming use or
-          knowledge of secret or supernatural powers or agencies.
-          <br />
-          2. beyond the range of ordinary knowledge or understanding;
-          mysterious.
-          <br />
-          3. secret; disclosed or communicated only to the initiated.
-        </SpellDescription>
-        <Dust src={dust} alt='sparkles' />
+      <OccultHeadline>
+        <Fade top duration={2800}>
+          <h2>
+            occult
+            <span>[ uh-kuhlt, ok-uhlt ]</span>
+          </h2>
+        </Fade>
+        <Fade right duration={2800}>
+          <SpellDescription>
+            1. of or relating to magic, astrology, or any system claiming use or
+            knowledge of secret or supernatural powers or agencies.
+            <br />
+            2. beyond the range of ordinary knowledge or understanding;
+            mysterious.
+            <br />
+            3. secret; disclosed or communicated only to the initiated.
+          </SpellDescription>
+        </Fade>
+        <Dust src={dust} alt="sparkles" />
       </OccultHeadline>
-      <OccultImages
-        ref={imageRef}
-        animate={imageControls}
-        initial='hidden'
-        variants={{
-          visible: { opacity: 1 },
-          hidden: { opacity: 0 },
-        }}
-        transition={{ duration: 1.4 }}>
-        <OccultImage
-          src={cup}
-          alt='goblet'
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          animate={{ scale: [1, 1.05, 1], y: [0, 40, 0] }}
-          transition={{
-            repeat: Infinity,
-            duration: 3.5,
-            type: 'spring',
-            bounce: 0.75,
-          }}
-        />
-        <OccultImage
-          src={crystalball}
-          alt='crystal ball'
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          animate={{ scale: [1, 1.05, 1], y: [0, -40, 0] }}
-          transition={{
-            repeat: Infinity,
-            duration: 4,
-            type: 'spring',
-            bounce: 0.75,
-          }}
-        />
-        <OccultImage
-          src={crown}
-          alt='crown'
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          animate={{ scale: [1, 1.05, 1], y: [0, 40, 0] }}
-          transition={{
-            repeat: Infinity,
-            duration: 5,
-            type: 'spring',
-            bounce: 0.75,
-          }}
-        />
-        <OccultImage
-          src={poison}
-          alt='poison'
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          animate={{ scale: [1, 1.05, 1], y: [0, -40, 0] }}
-          transition={{
-            repeat: Infinity,
-            duration: 3,
-            type: 'spring',
-            bounce: 0.75,
-          }}
-        />
-      </OccultImages>
-      <Hands
-        animate={imageControls}
-        initial='hidden'
-        variants={{
-          visible: { opacity: 1 },
-          hidden: { opacity: 0 },
-        }}
-        transition={{ duration: 1.4, delay: 1 }}>
-        <Hand 
-          src={hand1} 
-          alt='hand'           
-          animate={{ scale: [1, 1.05, 1], y: [0, -10, 0], rotate: [20, 0, 20] }}
-          transition={{
-            repeat: Infinity,
-            duration: 3,
-            type: 'spring',
-            bounce: 0.75,
-          }}
+      <Fade bottom duration={2800}>
+        <OccultImages>
+          <OccultImage 
+            src={cup} 
+            alt="goblet" 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            animate={{ scale: [1, 1.05, 1], y: [0, 40, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 3.5,
+              type: 'spring',
+              bounce: 0.75,
+            }}
           />
-        <Hand 
-          src={hand2} 
-          alt='hand' 
-          animate={{ scale: [1, 1.05, 1], y: [0, -10, 0], rotate: [-20, 0, -20] }}
-          transition={{
-            repeat: Infinity,
-            duration: 3,
-            type: 'spring',
-            bounce: 0.75,
-          }}/>
-      </Hands>
+          <OccultImage
+            src={crystalball}
+            alt="crystal ball"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            animate={{ scale: [1, 1.05, 1], y: [0, -40, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 4,
+              type: 'spring',
+              bounce: 0.75,
+            }}
+          />
+          <OccultImage
+            src={crown}
+            alt="crown"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            animate={{ scale: [1, 1.05, 1], y: [0, 40, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 5,
+              type: 'spring',
+              bounce: 0.75,
+            }}
+          />
+          <OccultImage
+            src={poison}
+            alt="poison"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            animate={{ scale: [1, 1.05, 1], y: [0, -40, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 3,
+              type: 'spring',
+              bounce: 0.75,
+            }}
+          />
+        </OccultImages>
+      </Fade>
+      <Fade bottom duration={2800}>
+        <Hands>
+          <Hand
+            src={hand1}
+            alt="hand"
+            animate={{ scale: [1, 1.05, 1], y: [0, -10, 0], rotate: [20, 0, 20] }}
+            transition={{
+              repeat: Infinity,
+              duration: 3,
+              type: 'spring',
+              bounce: 0.75,
+            }}
+          />
+          <Hand
+            src={hand2}
+            alt="hand"
+            animate={{ scale: [1, 1.05, 1], y: [0, -10, 0], rotate: [-20, 0, -20] }}
+            transition={{
+              repeat: Infinity,
+              duration: 3,
+              type: 'spring',
+              bounce: 0.75,
+            }}
+          />
+        </Hands>
+      </Fade>
     </>
   );
 };
@@ -289,7 +262,6 @@ const OccultImage = styled(motion.img)`
   :nth-child(4) {
     width: 180px;
   }
-}
 `;
 
 const Hands = styled(motion.div)`

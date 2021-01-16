@@ -1,118 +1,68 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {motion, useAnimation} from 'framer-motion';
-import { useInView } from "react-intersection-observer";
+import { motion } from 'framer-motion';
+import Fade from 'react-reveal/Fade';
+
 import legendlore from '../images/legend-lore.png';
 import prettyodd from '../images/prettyodd.png';
-import eye from '../images/eye.png'
+import eye from '../images/eye.png';
 import moon from '../images/moon.png';
 import OccultSection from './Occult';
 import ScryingSection from './Scrying';
 
-const LegendLore = () => {
-  const moonControls = useAnimation();
-  const [moonRef, moonInView] = useInView({triggerOnce: true});
-
-  const legendTitleControls = useAnimation();
-  const [legendTitleRef, legendTitleInView] = useInView({triggerOnce: true});
-
-  const legendSpellControls = useAnimation();
-  const [legendSpellRef, legendSpellInView] = useInView({triggerOnce: true});
-
-  const moonBoxControls = useAnimation();
-  const [moonBoxRef, moonBoxInView] = useInView({triggerOnce: true});
-
-  useEffect(() => {
-    if (moonInView) {
-      moonControls.start("visible");
-    }
-    if (legendTitleInView) {
-      legendTitleControls.start("visible");
-    }
-    if (legendSpellInView) {
-      legendSpellControls.start("visible");
-    }
-    if (moonBoxInView) {
-      moonBoxControls.start("visible");
-    }
-  }, [moonControls, moonInView, legendTitleControls, legendTitleInView, moonBoxControls, moonBoxInView, legendSpellControls, legendSpellInView]);
-
-
-  return (
-    <LegendContainer>
-    
-      <Moon 
-        src={moon} 
-        alt="moon"
-        ref={moonRef}        
-        animate={moonControls}
-        initial="hidden"
-        variants={{
-          visible: { opacity: 1, rotate: 0 },
-          hidden: { rotate: -90, opacity: 0}
+const LegendLore = () => (
+  <LegendContainer>
+    <Moon
+      src={moon}
+      alt="moon"
+    />
+    <HeadlinesBox>
+      <Fade right duration={2800}>
+        <Title
+          id="legend-lore"
+        >
+          legend lore
+        </Title>
+      </Fade>
+      <Fade right duration={2800}>
+        <SpellDescription>
+          <p>the spell brings to your mind a brief summary of the significant lore about the thing you named, consisting of current tales, forgotten stories, or even secret lore that has never been widely known.</p>
+        </SpellDescription>
+      </Fade>
+    </HeadlinesBox>
+    <MiddleRow>
+      <Fade left duration={2800}>
+        <MoonBox>
+          <MoonSmall src={moon} alt="moon" />
+          <Eye
+            src={eye}
+            alt="eye"
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{ repeat: Infinity, duration: 4, type: 'spring' }}
+          />
+          <h2>
+            Machault
+            <br />
+            Occult
+          </h2>
+          <p>is a prestigious collection of rare and extraordinary magical artefacts meticulously curated from around the world.</p>
+        </MoonBox>
+      </Fade>
+      <Oddities
+        src={prettyodd}
+        alt="shop interior"
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{
+          repeat: Infinity, duration: 2.5, type: 'spring', bounce: 0.75,
         }}
-        transition={{ duration: 2.4}}
       />
-      <HeadlinesBox>  
-        <Title 
-          id="legend-lore"           
-          ref={legendTitleRef}
-          animate={legendTitleControls}
-          initial="hidden"
-          variants={{
-            visible: { opacity: 1 },
-            hidden: { opacity: 0}
-          }}
-          transition={{ duration: 2 }}
-          >
-          legend lore</Title>
-        <SpellDescription       
-          animate={legendSpellControls}
-          ref={legendSpellRef}
-          initial="hidden"
-          variants={{
-            visible: { opacity: 1, x: '0%' },
-            hidden: { opacity: 0, x: '50%' }
-          }}
-          transition={{ duration: 2.4 }}>
-          <p>the spell brings to your mind a brief summary of the significant lore about the thing you named, consisting of current tales, forgotten stories, or even secret lore that has never been widely known.</p></SpellDescription>
-          </HeadlinesBox>
-          <MiddleRow>
-            <MoonBox
-              animate={moonBoxControls}
-              ref={moonBoxRef}
-              initial="hidden"
-              variants={{
-                visible: { opacity: 1 },
-                hidden: { opacity: 0}
-              }}
-              transition={{ duration: 2 }}
-            >
-              <MoonSmall src={moon} alt="moon" />
-              <Eye 
-                src={eye} 
-                alt="eye"               
-                animate={{opacity: [0, 1, 0]}}
-                transition={{ repeat: Infinity, duration: 4, type: 'spring'}}
-              />
-              <h2>Machault<br/>Occult</h2>
-              <p>is a prestigious collection of rare and extraordinary magical artefacts meticulously curated from around the world.</p>
-            </MoonBox>
-            <Oddities 
-              src={prettyodd} 
-              alt="shop interior"           
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ repeat: Infinity, duration: 2.5, type: 'spring', bounce: 0.75}} />
-          </MiddleRow>
-
-      <OccultSection />
-      <ScryingSection />
-    </LegendContainer>
-  )
-}
+    </MiddleRow>
+    <OccultSection />
+    <ScryingSection />
+  </LegendContainer>
+);
 
 export default LegendLore;
-
 
 // styles
 

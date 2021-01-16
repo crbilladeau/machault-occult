@@ -1,100 +1,52 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {motion, useAnimation} from 'framer-motion';
-import { useInView } from "react-intersection-observer";
+import {motion} from 'framer-motion';
+import Fade from 'react-reveal/Fade';
+
 import locateobject from '../images/locate-object.png';
 import hourglass from '../images/hourglass.jpg';
 import cosmos from '../images/cosmos.png';
 import Teleport from './Teleport';
 
 const LocateObject = () => {
-  const hourglassControls = useAnimation();
-  const [hourglassRef, hourglassInView] = useInView({triggerOnce: true});
-
-  const locateTitleControls = useAnimation();
-  const [locateTitleRef, locateTitleInView] = useInView({triggerOnce: true});
-
-  const locateSpellControls = useAnimation();
-  const [locateSpellRef, locateSpellInView] = useInView({triggerOnce: true});
-
-  const disclaimerControls = useAnimation();
-  const [disclaimerRef, disclaimerInView] = useInView({triggerOnce: true});
-
-  useEffect(() => {
-    if (hourglassInView) {
-      hourglassControls.start("visible");
-    }
-    if (locateTitleInView) {
-      locateTitleControls.start("visible");
-    }
-    if (locateSpellInView) {
-      locateSpellControls.start("visible");
-    }
-    if (disclaimerInView) {
-      disclaimerControls.start("visible");
-    }
-  }, [hourglassControls, hourglassInView, locateTitleControls, locateTitleInView, disclaimerControls, disclaimerInView, locateSpellControls, locateSpellInView]);
-
-
-
   return (
     <LocateContainer>
       <Cosmos src={cosmos} alt="cosmos" />
       <HeadlinesBox>
-        <Title 
-          id="locate-object"         
-          ref={locateTitleRef}
-          animate={locateTitleControls}
-          initial="hidden"
-          variants={{
-            visible: { opacity: 1 },
-            hidden: { opacity: 0}
-          }}
-          transition={{ duration: 2 }}
-        >
-          locate object
-        </Title>
-        <SpellDescription
-          animate={locateSpellControls}
-          ref={locateSpellRef}
-          initial="hidden"
-          variants={{
-            visible: { opacity: 1, x: "0" },
-            hidden: { opacity: 0, x: "50%"}
-          }}
-          transition={{ duration: 2.4 }}
-        >
-          <p>locate the nearest object of a particular kind, such as a certain kind of apparel, jewelry, furniture, tool, or weapon.</p>
-        </SpellDescription>
+        <Fade right duration={2800}>
+          <Title id="locate-object">
+            locate object
+          </Title>
+        </Fade>
+        <Fade left duration={2800}>
+          <SpellDescription>
+            <p>
+              locate the nearest object of a particular kind, such as a certain kind of apparel, jewelry, furniture, tool, or weapon.
+            </p>
+          </SpellDescription>
+        </Fade>
       </HeadlinesBox>
       <MiddleRow>
-        <ImageBox
-          ref={hourglassRef}
-          animate={hourglassControls}
-          initial='hidden'
-          variants={{
-            visible: { opacity: 1, y: "0" },
-            hidden: { opacity: 0, y: "50%"},
-          }}
-          transition={{ duration: 1.4}}
-        >
-          <img src={hourglass} alt="hourglass" />
-        </ImageBox>
-        <Disclaimer
-          ref={disclaimerRef}
-          animate={disclaimerControls}
-          initial='hidden'
-          variants={{
-            visible: { opacity: 1, y: "0" },
-            hidden: { opacity: 0, y: "-50%" },
-          }}
-          transition={{ duration: 1.4, delay: 1.2 }}
-        >
-          <p>Our selection of mythical objects, alchemical liquids, and magical and non-magical tomes is unlike any other in the world.**</p>
-          <p>** Machault Occult and its owner(s) are not responsible or liable for any injuries, lost limbs or appendages, additional clones, demons summoned, confessions of love, unwanted body swaps, accidental & painful deaths - irreversible or otherwise - sustained before or after purchase from our inventory. NO RETURNS - ALL SALES ARE FINAL!</p>
-        </Disclaimer>
+          <ImageBox>
+            <Fade left duration={2800}>
+              <img src={hourglass} alt="hourglass" />
+            </Fade>
+          </ImageBox>
+        
+          <Disclaimer>
+            <Fade right duration={2800}>
+              <p>
+                Our selection of mythical objects, alchemical liquids, and magical and non-magical tomes is unlike any other in the world.**
+              </p> 
+            </Fade>
+            <Fade bottom duration={2800}>
+              <p>
+                ** Machault Occult and its owner(s) are not responsible or liable for any injuries, lost limbs or appendages, additional clones, demons summoned, confessions of love, unwanted body swaps, accidental & painful deaths - irreversible or otherwise - sustained before or after purchase from our inventory. NO RETURNS - ALL SALES ARE FINAL!
+              </p>
+            </Fade>
+          </Disclaimer>
+       
       </MiddleRow>
-  
       <Teleport />
     </LocateContainer>
   )
@@ -134,7 +86,7 @@ const HeadlinesBox = styled.div`
   }
 `;
 
-const Title = styled(motion.h1)`
+const Title = styled.h1`
   font-size: 12vw;
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -161,7 +113,7 @@ const Cosmos = styled.img`
   }
 `;
 
-const SpellDescription = styled(motion.div)`
+const SpellDescription = styled.div`
   align-self: flex-end;
   max-width: 48vw;    
   z-index: 1;
@@ -254,7 +206,7 @@ const MiddleRow = styled.div`
   }
 `;
 
-const ImageBox = styled(motion.div)`
+const ImageBox = styled.div`
   display: flex;
   width: 100%;
   @media screen and (max-width: 768px) {
@@ -271,7 +223,7 @@ const ImageBox = styled(motion.div)`
   }
 `;
 
-const Disclaimer = styled(motion.div)`
+const Disclaimer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

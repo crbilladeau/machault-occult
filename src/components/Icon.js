@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from 'react';
 import LazyLinePainter from 'lazy-line-painter';
 import styled from 'styled-components';
 import eye from '../images/eye.gif';
@@ -28,12 +28,14 @@ const MobileHaviEye = styled.img`
 
 function Icon() {
   useEffect(() => {
-    let el = document.querySelector('#havieye');
- 
-    let myAnimation = new LazyLinePainter(el, {"ease":"easeInOutExpo","strokeWidth":10.6,"strokeOpacity":1,"strokeColor":"#051e27","strokeCap":"round","repeat":-1}); 
-    
+    const el = document.querySelector('#havieye');
+
+    const myAnimation = new LazyLinePainter(el, {
+      ease: 'easeInOutExpo', strokeWidth: 10.6, strokeOpacity: 1, strokeColor: '#051e27', strokeCap: 'round', repeat: -1,
+    });
+
     myAnimation.paint();
-  }, [])
+  }, []);
 
   return (
     <EyeContainer>
@@ -57,7 +59,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-0"
-          ></path>
+          />
           <path
             id="aatK1O9am"
             fillOpacity="0"
@@ -65,7 +67,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-1"
-          ></path>
+          />
           <path
             id="bVi0AUPZi"
             fillOpacity="0"
@@ -73,7 +75,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-2"
-          ></path>
+          />
           <path
             id="a1I42O1Qra"
             fillOpacity="0"
@@ -81,7 +83,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-3"
-          ></path>
+          />
           <path
             id="hmv3Zdyh1"
             fillOpacity="0"
@@ -89,7 +91,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-4"
-          ></path>
+          />
           <path
             id="e3XsC0jwJ"
             fillOpacity="0"
@@ -97,7 +99,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-5"
-          ></path>
+          />
           <path
             id="av3bwOVqW"
             fillOpacity="0"
@@ -105,7 +107,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-6"
-          ></path>
+          />
           <path
             id="ecUdGK9qV"
             fillOpacity="0"
@@ -113,7 +115,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-7"
-          ></path>
+          />
           <path
             id="bB42oHqY"
             fillOpacity="0"
@@ -121,7 +123,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-8"
-          ></path>
+          />
           <path
             id="aTMtCWYY5"
             fillOpacity="0"
@@ -129,7 +131,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-9"
-          ></path>
+          />
           <path
             id="dVkkp4Gu1"
             fillOpacity="0"
@@ -137,7 +139,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-10"
-          ></path>
+          />
           <path
             id="a6U7mO5z98"
             fillOpacity="0"
@@ -145,7 +147,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-11"
-          ></path>
+          />
           <path
             id="a8JeusiWVw"
             fillOpacity="0"
@@ -153,7 +155,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-12"
-          ></path>
+          />
           <path
             id="f2iQkdWaJl"
             fillOpacity="0"
@@ -161,7 +163,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-13"
-          ></path>
+          />
           <path
             id="a6fFF0dFiy"
             fillOpacity="0"
@@ -169,7 +171,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-14"
-          ></path>
+          />
           <path
             id="a6jk0VeRW"
             fillOpacity="0"
@@ -177,7 +179,7 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-15"
-          ></path>
+          />
           <path
             id="ccSouIQbP"
             fillOpacity="0"
@@ -185,110 +187,110 @@ function Icon() {
             data-llp-delay="0"
             data-llp-duration="3100"
             data-llp-id="havieye-16"
-          ></path>
+          />
         </defs>
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#baSzvPTec"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#aatK1O9am"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#bVi0AUPZi"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#a1I42O1Qra"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#hmv3Zdyh1"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#e3XsC0jwJ"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#av3bwOVqW"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#ecUdGK9qV"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#bB42oHqY"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#aTMtCWYY5"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#dVkkp4Gu1"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#a6U7mO5z98"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#a8JeusiWVw"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="12"
           xlinkHref="#f2iQkdWaJl"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="8"
           xlinkHref="#a6fFF0dFiy"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="12"
           xlinkHref="#a6jk0VeRW"
-        ></use>
+        />
         <use
           fillOpacity="0"
           stroke="#051e27"
           strokeWidth="12"
           xlinkHref="#ccSouIQbP"
-        ></use>
+        />
       </HaviEye>
     </EyeContainer>
   );
@@ -296,10 +298,8 @@ function Icon() {
 
 export default Icon;
 
-export const MobileEye = () => {
-  return (
-    <EyeContainer>
-      <MobileHaviEye src={eye} />
-    </EyeContainer>
-  )
-}
+export const MobileEye = () => (
+  <EyeContainer>
+    <MobileHaviEye src={eye} />
+  </EyeContainer>
+);

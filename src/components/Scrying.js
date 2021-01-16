@@ -1,128 +1,46 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {motion, useAnimation} from 'framer-motion';
-import { useInView } from "react-intersection-observer";
+import { motion } from 'framer-motion';
+import Fade from 'react-reveal/Fade';
+
 import capricorn from '../images/Capricornus.png';
 import aquarius from '../images/Aquarius.png';
 import portrait from '../images/portrait.png';
 import crystal from '../images/crystal.png';
+
 const Scrying = () => {
-  const scryingTitleControls = useAnimation();
-  const [scryingTitleRef, scryingTitleInView] = useInView({triggerOnce: true});
-
-  const constellationControls = useAnimation();
-  const [constellationRef, constellationInView] = useInView({triggerOnce: true});
-
-  const scryingSpellControls = useAnimation();
-  const [scryingSpellRef, scryingSpellInView] = useInView({triggerOnce: true});
-
-  const aboutControls = useAnimation();
-  const [aboutRef, aboutInView] = useInView({triggerOnce: true});
-
-  useEffect(() => {
-    if (scryingTitleInView) {
-      scryingTitleControls.start('visible');
-    }
-    if (constellationInView) {
-      constellationControls.start('visible');
-    }
-    if (scryingSpellInView) {
-      scryingSpellControls.start('visible');
-    }
-    if (aboutInView) {
-      aboutControls.start('visible');
-    }
-  }, [scryingTitleControls, constellationControls, scryingTitleInView, constellationInView, scryingSpellControls, scryingSpellInView, aboutControls, aboutInView]);
-
   return (
-    <ScryingContainer>        
-      <Constellation 
-        src={aquarius} 
-        alt="aquarius constellation" 
-        ref={constellationRef}        
-        animate={constellationControls}
-        initial="hidden"
-        variants={{
-          visible: { opacity: [0, 1, 0]},
-          hidden: { opacity: 0 }
-        }}
-        transition={{ repeat: Infinity, duration: 4 }}
-        /> 
-      <Constellation 
-        src={capricorn} 
-        alt="capricorn constellation"         
-        ref={constellationRef}        
-        animate={constellationControls}
-        initial="hidden"
-        variants={{
-          visible: { opacity: [0, 1, 0]},
-          hidden: { opacity: 0 }
-        }}
-        transition={{ repeat: Infinity, duration: 4 }}
-        />
+    <ScryingContainer>
+      <Constellation src={aquarius} alt="aquarius constellation" />
+      <Constellation src={capricorn} alt="capricorn constellation" />
       <ScryingHeadline>
-        <Title
-          id="scrying"           
-          ref={scryingTitleRef}
-          animate={scryingTitleControls}
-          initial="hidden"
-          variants={{
-            visible: { opacity: 1 },
-            hidden: { opacity: 0}
-          }}
-          transition={{ duration: 2 }}>scrying</Title>
-
-        <SpellDescription
-          animate={scryingSpellControls}
-          ref={scryingSpellRef}
-          initial="hidden"
-          variants={{
-            visible: { opacity: 1, x: '0%' },
-            hidden: { opacity: 0, x: '-50%' }
-          }}
-          transition={{ duration: 2 }}
-        >
-          see and hear a particular creature you choose that is on the same plane of existence as you.
-        </SpellDescription>
-        <About
-          ref={aboutRef}
-          animate={aboutControls}
-          initial='hidden'
-          variants={{
-            visible: { opacity: 1 },
-            hidden: { opacity: 0 },
-          }}
-          transition={{ duration: 1.4}}>
-          <Crystal 
-            src={crystal} 
-            alt="crystal"
-            animate={{ y: [0, -15, 0]}}
-            transition={{
-              repeat: Infinity,
-              duration: 3,
-              type: 'spring',
-              bounce: 0.75,
-            }}
-          />
-          <p>
-            Havi Miniti is one of the world’s most venerable wizards. He has co-owned and operated Machault Occult with his husband, Tanum Machault, for the last several decades. Do not ask him how old he is.
-          </p>       
-        </About>
+        <Fade left duration={2800}>
+          <Title id="scrying">
+            scrying
+          </Title>
+        </Fade>
+        <Fade left duration={2800}>
+          <SpellDescription>
+            see and hear a particular creature you choose that is on the same plane of existence as you.
+          </SpellDescription>
+        </Fade>
+        <Fade bottom duration={2800}>
+          <About>
+            <Crystal src={crystal} alt="crystal" />
+            <p>
+              Havi Miniti is one of the world’s most venerable wizards. He has co-owned and operated Machault Occult with his husband, Tanum Machault, for the last several decades. Do not ask him how old he is.
+            </p>
+          </About>
+        </Fade>
       </ScryingHeadline>
-      <Portrait           
-          ref={aboutRef}
-          animate={aboutControls}
-          initial='hidden'
-          variants={{
-            visible: { opacity: 1, y: '0'},
-            hidden: { opacity: 0, y: '50%'},
-          }}
-          transition={{ duration: 2.4, delay: 0.6 }}>
-        <img src={portrait} alt="shop owner, Havier Miniti" />
-      </Portrait>
+      <Fade right duration={2800}>
+        <Portrait>
+          <img src={portrait} alt="shop owner, Havier Miniti" />
+        </Portrait>
+      </Fade>
     </ScryingContainer>
-  )
-}
+  );
+};
 
 export default Scrying;
 
@@ -149,9 +67,6 @@ const ScryingHeadline = styled.div`
   }
   @media screen and (max-width: 420px) {
     margin-top: 4rem;
-  }
-
-
   }
 `;
 

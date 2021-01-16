@@ -1,146 +1,60 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {motion, useAnimation} from 'framer-motion';
-import { useInView } from "react-intersection-observer";
+import { motion } from 'framer-motion';
+import Fade from 'react-reveal/Fade';
+
 import Footer from './Footer';
 import sending from '../images/sending.png';
 import hermit from '../images/hermit.png';
 import goldeye from '../images/goldeye.png';
 
-const Sending = () => {
-  const sendingTitleControls = useAnimation();
-  const [sendingTitleRef, sendingTitleInView] = useInView({triggerOnce: true});
-
-  const sendingSpellControls = useAnimation();
-  const [sendingSpellRef, sendingSpellInView] = useInView({triggerOnce: true});
-
-  const eyeControls = useAnimation();
-  const [eyeRef, eyeInView] = useInView({triggerOnce: true});
-
-  const disclaimerControls = useAnimation();
-  const [disclaimerRef, disclaimerInView] = useInView({triggerOnce: true});
-
-  const sendingControls = useAnimation();
-  const [sendingRef, sendingInView] = useInView({triggerOnce: true});
-
-  const hermitControls = useAnimation();
-  const [hermitRef, hermitInView] = useInView({triggerOnce: true});
-
-  useEffect(() => {
-    if (sendingTitleInView) {
-      sendingTitleControls.start("visible");
-    }
-    if (sendingSpellInView) {
-      sendingSpellControls.start("visible");
-    }
-    if (eyeInView) {
-      eyeControls.start("visible");
-    }
-    if (hermitInView) {
-      hermitControls.start("visible");
-    }
-    if (disclaimerInView) {
-      disclaimerControls.start("visible");
-    }
-    if (sendingInView) {
-      sendingControls.start("visible");
-    }
-
-  }, [sendingTitleInView, sendingTitleControls, sendingSpellInView, sendingSpellControls, eyeInView, eyeControls, disclaimerInView, disclaimerControls, sendingControls, sendingInView, hermitInView, hermitControls]);
-
-  return (
-    <SendingContainer id="sending">
-      <HeadlinesBox>
-      <Eye 
-        src={goldeye} 
-        alt="gold eye" 
-        ref={eyeRef}
-        animate={eyeControls}
-        initial='hidden'
-        variants={{
-          visible: { opacity: 1, y: '0' },
-          hidden: { opacity: 0, y: '-50%' },
-        }}
-        transition={{ duration: 2 }}
+const Sending = () => (
+  <SendingContainer id="sending">
+    <HeadlinesBox>
+      <Eye
+        src={goldeye}
+        alt="gold eye"
       />
-        <Title    
-          ref={sendingTitleRef}
-          animate={sendingTitleControls}
-          initial="hidden"
-          variants={{
-            visible: { opacity: 1 },
-            hidden: { opacity: 0}
-          }}
-          transition={{ duration: 2 }}
-        >
+      <Fade right duration={2800}>
+        <Title>
           sending
         </Title>
-        <SpellDescription
-          animate={sendingSpellControls}
-          ref={sendingSpellRef}
-          initial="hidden"
-          variants={{
-            visible: { opacity: 1, x: '0%' },
-            hidden: { opacity: 0, x: '50%' }
-          }}
-          transition={{ duration: 2.4 }}
-        >
+      </Fade>
+      <Fade right duration={2800}>
+        <SpellDescription>
           <p>send a short message of twenty-five words or less to a creature with which you are familiar. the creature hears the message in its mind, recognizes you as the sender if it knows you, and can answer in a like manner immediately.</p>
         </SpellDescription>
-      </HeadlinesBox>
-      <MiddleRow>
+      </Fade>
+    </HeadlinesBox>
+    <MiddleRow>
+      <Fade left duration={2800}>
         <Disclaimer>
-        
-        <SendingDescription
-          initial="hidden"
-          ref={sendingRef}
-          animate={sendingControls}
-          variants={{
-            visible: { opacity: 1, x: '0%' },
-            hidden: { opacity: 0, x: '-50%' }
-          }}
-          transition={{ duration: 2 }}  
-        >
-          Unfortunately, Mr. Miniti does not have social media, email, or a phone number. Being the busy and hardworking wizard that he is, Mr. Miniti is unavailable for comment at this time. 
-          <br />
-          <br />
-          For any and all inquiries, please contact our shop’s intern for your request to be considered.**</SendingDescription>
+          <SendingDescription>
+            Unfortunately, Mr. Miniti does not have social media, email, or a phone number. Being the busy and hardworking wizard that he is, Mr. Miniti is unavailable for comment at this time.
+            <br />
+            <br />
+            For any and all inquiries, please contact our shop’s intern for your request to be considered.**
+          </SendingDescription>
         </Disclaimer>
+      </Fade>
+      <Fade bottom duration={2800}>
         <Disclaimer>
-          <Hermit 
-            src={hermit} 
-            alt="hermit tarot" 
-            initial="hidden"
-            ref={hermitRef}
-            animate={hermitControls}
-            variants={{
-              visible: { opacity: 1, x: '0%' },
-              hidden: { opacity: 0, x: '50%' }
-            }}
-            transition={{ duration: 2 }}  
-          />          
-          <DisclaimerDescription
-            initial="hidden"
-            ref={sendingRef}
-            animate={sendingControls}
-            variants={{
-              visible: { opacity: 1, x: '0%' },
-              hidden: { opacity: 0, x: '50%' }
-            }}
-            transition={{ duration: 2 }}  
-          >
+          <Hermit
+            src={hermit}
+            alt="hermit tarot"
+          />
+          <DisclaimerDescription>
             ** Please respect the privacy of Mr. Miniti. If you have a question, do not call, whether by magical means or otherwise. Inquiries about Arnam Kingstar and the Cult of Sorrows should be sent to Joaquin Calloway, The Nightingale. Any attempts made to contact Mr. Miniti directly will be filtered by magic and ignored, and you may become cursed at your own risk. If a request makes it to Mr. Miniti through his intern and he deems it worthy of his time, he might get back to you in the next decade.
           </DisclaimerDescription>
         </Disclaimer>
-      </MiddleRow>
+      </Fade>
+    </MiddleRow>
 
-      <Footer />
-    </SendingContainer>
-  )
-}
+    <Footer />
+  </SendingContainer>
+);
 
 export default Sending;
-
 
 const SendingContainer = styled.div`
   background-image: url(${sending});

@@ -1,85 +1,48 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {motion, useAnimation} from 'framer-motion';
-import { useInView } from "react-intersection-observer";
+import { motion } from 'framer-motion';
+import Fade from 'react-reveal/Fade';
+
 import astro from '../images/astro.png';
 import bluedoor from '../images/blue-door.jpg';
 
-const Teleport = () => {
-  const teleportTitleControls = useAnimation();
-  const [teleportTitleRef, teleportTitleInView] = useInView({triggerOnce: true});
-
-  const teleportSpellControls = useAnimation();
-  const [teleportSpellRef, teleportSpellInView] = useInView({triggerOnce: true});
-
-  const midRowControls = useAnimation();
-  const [midRowRef, midRowInView] = useInView({triggerOnce: true});
-
-  useEffect(() => {
-    if (teleportTitleInView) {
-      teleportTitleControls.start("visible");
-    }
-    if (teleportSpellInView) {
-      teleportSpellControls.start("visible");
-    }
-    if (midRowInView) {
-      midRowControls.start("visible");
-    }
-  }, [teleportTitleControls, teleportTitleInView, teleportSpellControls, teleportSpellInView, midRowControls, midRowInView]);
-
-  return (
-    <TeleportHeadline>
-      <Title 
-        id="teleport"
-        ref={teleportTitleRef}
-        animate={teleportTitleControls}
-        initial="hidden"
-        variants={{
-          visible: { opacity: 1 },
-          hidden: { opacity: 0}
-        }}
-        transition={{ duration: 2 }}
-      >
+const Teleport = () => (
+  <TeleportHeadline>
+    <Fade left duration={2800}>
+      <Title id="teleport">
         teleport
       </Title>
-      <SpellDescription
-        animate={teleportSpellControls}
-        ref={teleportSpellRef}
-        initial="hidden"
-        variants={{
-          visible: { opacity: 1, x: '0%' },
-          hidden: { opacity: 0, x: '-50%' }
-        }}
-        transition={{ duration: 2.4 }}
-      >
-        <p>instantly transports you and up to eight willing creatures of your choice that you can see within range, or a single object, to a destination you select.</p>
-      </SpellDescription>   
-      <Astro 
-        src={astro} 
-        alt="astrology circle"
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-      />
-      <MiddleRow
-        ref={midRowRef}
-        animate={midRowControls}
-        initial='hidden'
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: -50 },
-        }}
-        transition={{ duration: 2 }}
-      >
-        
-        <img src={bluedoor} alt="blue door" />
-        <Disclaimer>
-        <p>The true location of our shop changes each day. Only skilled magic users capable of advanced divination can ascertain our daily location. For the uniniated, our Google Maps coordinates are available on our Facebook page.**</p>
-        <p>** Machault Occult and its owner(s) are not responsible or liable for accidental banishments to other planes of existence as a result of unlawful entry onto the premises or entering outside of business hours, nor for any items “lost” or left behind on the property. Machault Occult reserves the right to banish any customers at the owner’s discretion. For Mr. Miniti's safety, children are not allowed on the premises at any time. We will not update our Facebook page or post consistent business hours - stop asking, or we will delete it.</p>
-        </Disclaimer>
+    </Fade>
+    <Fade left duration={2800}>
+      <SpellDescription>
+        <p>
+          instantly transports you and up to eight willing creatures of your choice that you can see within range, or a single object, to a destination you select.
+        </p>
+      </SpellDescription>
+    </Fade>
+    <Astro
+      src={astro}
+      alt="astrology circle"
+    />
+      <MiddleRow>
+        <Fade right duration={2800}>
+          <img src={bluedoor} alt="blue door" />
+        </Fade>
+          <Disclaimer>
+            <Fade left duration={2800}>
+              <p>
+                The true location of our shop changes each day. Only skilled magic users capable of advanced divination can ascertain our daily location. For the uniniated, our Google Maps coordinates are available on our Facebook page.**
+              </p>
+            </Fade>
+            <Fade bottom duration={2800}>
+              <p>
+                ** Machault Occult and its owner(s) are not responsible or liable for accidental banishments to other planes of existence as a result of unlawful entry onto the premises or entering outside of business hours, nor for any items “lost” or left behind on the property. Machault Occult reserves the right to banish any customers at the owner’s discretion. For Mr. Miniti's safety, children are not allowed on the premises at any time. We will not update our Facebook page or post consistent business hours - stop asking, or we will delete it.
+              </p>
+            </Fade>
+          </Disclaimer>
       </MiddleRow>
-    </TeleportHeadline>
-  )
-}
+  </TeleportHeadline>
+);
 
 export default Teleport;
 
