@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Fade from 'react-reveal/Fade';
 
 import capricorn from '../images/Capricornus.png';
@@ -9,10 +10,41 @@ import portrait from '../images/portrait.png';
 import crystal from '../images/crystal.png';
 
 const Scrying = () => {
+  const constellationControls = useAnimation();
+  const [constellationRef, constellationInView] = useInView({triggerOnce: true});
+
+  useEffect(() => {
+    if (constellationInView) {
+      constellationControls.start('visible');
+    }
+  }, [constellationControls, constellationInView]);
+
   return (
     <ScryingContainer>
-      <Constellation src={aquarius} alt="aquarius constellation" />
-      <Constellation src={capricorn} alt="capricorn constellation" />
+      <Constellation 
+        src={aquarius} 
+        alt="aquarius constellation" 
+        ref={constellationRef}        
+        animate={constellationControls}
+        initial="hidden"
+        variants={{
+          visible: { opacity: [0, 1, 0]},
+          hidden: { opacity: 0 }
+        }}
+        transition={{ repeat: Infinity, duration: 4 }}
+      />
+      <Constellation 
+        src={capricorn} 
+        alt="capricorn constellation" 
+        ref={constellationRef}        
+        animate={constellationControls}
+        initial="hidden"
+        variants={{
+          visible: { opacity: [0, 1, 0]},
+          hidden: { opacity: 0 }
+        }}
+        transition={{ repeat: Infinity, duration: 4 }}  
+      />
       <ScryingHeadline>
         <Fade left duration={2800}>
           <Title id="scrying">
@@ -26,7 +58,17 @@ const Scrying = () => {
         </Fade>
         <Fade bottom duration={2800}>
           <About>
-            <Crystal src={crystal} alt="crystal" />
+            <Crystal 
+              src={crystal} 
+              alt="crystal" 
+              animate={{ y: [0, -15, 0]}}
+              transition={{
+                repeat: Infinity,
+                duration: 3,
+                type: 'spring',
+                bounce: 0.75,
+              }}  
+            />
             <p>
               Havi Miniti is one of the world’s most venerable wizards. He has co-owned and operated Machault Occult with his husband, Tanum Machault, for the last several decades. Do not ask him how old he is.
             </p>
@@ -86,7 +128,7 @@ const Title = styled.h1`
   }
 `;
 
-const Constellation = styled.img`
+const Constellation = styled(motion.img)`
   width: 20%;
   z-index: 1;
   position: absolute;
@@ -183,7 +225,7 @@ const About = styled.div`
   }
 `;
 
-const Crystal = styled.img`
+const Crystal = styled(motion.img)`
   width: 16%;
   margin: 0 2rem 0 0;
   @media screen and (max-width: 1024px) {

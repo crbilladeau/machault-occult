@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from "react-intersection-observer";
 import Fade from 'react-reveal/Fade';
 
 import legendlore from '../images/legend-lore.png';
@@ -11,11 +12,28 @@ import OccultSection from './Occult';
 import ScryingSection from './Scrying';
 
 const LegendLore = () => {
+  const moonControls = useAnimation();
+  const [moonRef, moonInView] = useInView({triggerOnce: true});
+
+  useEffect(() => {
+    if (moonInView) {
+      moonControls.start("visible");
+    }
+  }, [moonControls, moonInView]);
+
   return (
   <LegendContainer>
     <Moon
       src={moon}
       alt="moon"
+      ref={moonRef}        
+      animate={moonControls}
+      initial="hidden"
+      variants={{
+        visible: { opacity: 1, rotate: 0 },
+        hidden: { rotate: -90, opacity: 0}
+      }}
+      transition={{ duration: 2.4, delay: 2.2 }}
     />
     <HeadlinesBox>
       <Fade right duration={2800}>
@@ -76,7 +94,7 @@ const LegendContainer = styled.div`
   position: relative;
 `;
 
-const Moon = styled.img`
+const Moon = styled(motion.img)`
   width: 67%;
   margin-left: -14rem;
   position: absolute;
