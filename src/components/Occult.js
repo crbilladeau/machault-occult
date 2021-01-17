@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion} from 'framer-motion';
 import Fade from 'react-reveal/Fade';
 
 import cup from '../images/cup.png';
@@ -122,7 +121,7 @@ const Occult = () => {
 
 export default Occult;
 
-const OccultHeadline = styled(motion.div)`
+const OccultHeadline = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -234,7 +233,7 @@ const Dust = styled.img`
   }
 `;
 
-const OccultImages = styled(motion.div)`
+const OccultImages = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -246,7 +245,7 @@ const OccultImages = styled(motion.div)`
   z-index: 2;
 `;
 
-const OccultImage = styled(motion.img)`
+const OccultImage = styled.img`
   width: 200px;
   margin: 1rem;
   z-index: 2;
@@ -264,7 +263,7 @@ const OccultImage = styled(motion.img)`
   }
 `;
 
-const Hands = styled(motion.div)`
+const Hands = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -277,7 +276,7 @@ const Hands = styled(motion.div)`
   }
 `;
 
-const Hand = styled(motion.img)`
+const Hand = styled.img`
   width: 350px;
   margin: 0 6rem;
   :nth-child(1) {

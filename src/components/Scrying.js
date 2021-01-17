@@ -70,7 +70,7 @@ const ScryingHeadline = styled.div`
   }
 `;
 
-const Title = styled(motion.h1)`
+const Title = styled.h1`
   font-size: 12vw;
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -86,7 +86,7 @@ const Title = styled(motion.h1)`
   }
 `;
 
-const Constellation = styled(motion.img)`
+const Constellation = styled.img`
   width: 20%;
   z-index: 1;
   position: absolute;
@@ -108,7 +108,7 @@ const Constellation = styled(motion.img)`
   }
 `;
 
-const SpellDescription = styled(motion.p)`
+const SpellDescription = styled.p`
   align-self: flex-end;
   margin: 3rem 2rem;
   max-width: 30vw;
@@ -142,7 +142,7 @@ const SpellDescription = styled(motion.p)`
   }
 `;
 
-const About = styled(motion.div)`
+const About = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -183,7 +183,7 @@ const About = styled(motion.div)`
   }
 `;
 
-const Crystal = styled(motion.img)`
+const Crystal = styled.img`
   width: 16%;
   margin: 0 2rem 0 0;
   @media screen and (max-width: 1024px) {
@@ -195,7 +195,7 @@ const Crystal = styled(motion.img)`
   }
 `;
 
-const Portrait = styled(motion.div)`
+const Portrait = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

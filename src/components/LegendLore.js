@@ -10,7 +10,8 @@ import moon from '../images/moon.png';
 import OccultSection from './Occult';
 import ScryingSection from './Scrying';
 
-const LegendLore = () => (
+const LegendLore = () => {
+  return (
   <LegendContainer>
     <Moon
       src={moon}
@@ -48,19 +49,20 @@ const LegendLore = () => (
           <p>is a prestigious collection of rare and extraordinary magical artefacts meticulously curated from around the world.</p>
         </MoonBox>
       </Fade>
-      <Oddities
-        src={prettyodd}
-        alt="shop interior"
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{
-          repeat: Infinity, duration: 2.5, type: 'spring', bounce: 0.75,
-        }}
-      />
+        <Oddities
+          src={prettyodd}
+          alt="shop interior"
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{
+            repeat: Infinity, duration: 2.5, type: 'spring', bounce: 0.75,
+          }}
+        />
     </MiddleRow>
     <OccultSection />
     <ScryingSection />
   </LegendContainer>
-);
+  );
+}
 
 export default LegendLore;
 
@@ -74,7 +76,7 @@ const LegendContainer = styled.div`
   position: relative;
 `;
 
-const Moon = styled(motion.img)`
+const Moon = styled.img`
   width: 67%;
   margin-left: -14rem;
   position: absolute;
@@ -124,7 +126,7 @@ export const HeadlinesBox = styled.div`
   }
 `;
 
-const Title = styled(motion.h1)`
+const Title = styled.h1`
   font-size: 12vw;
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -148,7 +150,7 @@ const Title = styled(motion.h1)`
   }
 `;
 
-export const SpellDescription = styled(motion.div)`
+export const SpellDescription = styled.div`
   align-self: flex-end;
   max-width: 46vw;    
   z-index: 1;
@@ -223,7 +225,7 @@ const MiddleRow = styled.div`
   }
 `;
 
-const MoonBox = styled(motion.div)`
+const MoonBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

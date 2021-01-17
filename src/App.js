@@ -8,7 +8,7 @@ import LocateObject from './components/LocateObject';
 import Sending from './components/Sending';
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 6000);

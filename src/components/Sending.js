@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import Fade from 'react-reveal/Fade';
 
 import Footer from './Footer';
@@ -95,7 +94,7 @@ const HeadlinesBox = styled.div`
   }
 `;
 
-const Title = styled(motion.h1)`
+const Title = styled.h1`
   font-size: 12vw;
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -113,7 +112,7 @@ const Title = styled(motion.h1)`
   }
 `;
 
-const SpellDescription = styled(motion.div)`
+const SpellDescription = styled.div`
   align-self: center;
   max-width: 48vw;    
   z-index: 1;
@@ -174,7 +173,7 @@ const Disclaimer = styled.div`
   }
 `;
 
-const DisclaimerDescription = styled(motion.p)`
+const DisclaimerDescription = styled.p`
   color: white;
   font-size: 0.8rem;
   font-family: 'Playfair Display', serif;
@@ -194,7 +193,7 @@ const DisclaimerDescription = styled(motion.p)`
   }
 `;
 
-const SendingDescription = styled(motion.p)`
+const SendingDescription = styled.p`
   align-self: flex-start;
   color: white;
   font-size: 2.2vw;
@@ -220,7 +219,7 @@ const SendingDescription = styled(motion.p)`
   }
 `;
 
-const Eye = styled(motion.img)`
+const Eye = styled.img`
   width: 50%;
   position: absolute;
   top: -30px;
@@ -231,7 +230,7 @@ const Eye = styled(motion.img)`
   }
 `;
 
-const Hermit = styled(motion.img)`
+const Hermit = styled.img`
   width: 50%;
   margin: 0;
   @media screen and (max-width: 768px) {

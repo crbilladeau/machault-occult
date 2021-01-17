@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {motion} from 'framer-motion';
 import Fade from 'react-reveal/Fade';
 
 import locateobject from '../images/locate-object.png';

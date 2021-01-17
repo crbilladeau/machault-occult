@@ -23,6 +23,8 @@ const Teleport = () => (
     <Astro
       src={astro}
       alt="astrology circle"
+      animate={{ rotate: 360 }}
+      transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
     />
       <MiddleRow>
         <Fade right duration={2800}>
@@ -68,7 +70,7 @@ const TeleportHeadline = styled.div`
   }
 `;
 
-const Title = styled(motion.h1)`
+const Title = styled.h1`
   font-size: 12vw;
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -88,7 +90,7 @@ const Title = styled(motion.h1)`
   }
 `;
 
-const SpellDescription = styled(motion.div)`
+const SpellDescription = styled.div`
   align-self: flex-start;
   margin: 3rem 4rem 0 4rem;
   max-width: 40vw;
@@ -138,7 +140,7 @@ const Astro = styled(motion.img)`
   }
 `;
 
-const MiddleRow = styled(motion.div)`
+const MiddleRow = styled.div`
   display: flex;
   flex-direction: row-reverse;
   width: 100%;  
