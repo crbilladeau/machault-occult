@@ -13,7 +13,7 @@
     "react-hook-mighty-mouse": "^1.4.31",
     "react-intersection-observer": "^8.31.0",
     "react-reveal": "^1.2.2",
-    "react-scripts": "4.0.1",
+    "react-scripts": "5.0.1",
     "react-scroll": "^1.8.1",
     "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
